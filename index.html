@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CR7 Universe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">⚽ CR7</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#lifestyle">Lifestyle</a>
+      <a href="#matches">Matches</a>
+      <a href="#stats">Stats</a>
+      <a href="#fanzone">Fan Zone</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section (Photo ab image link fixed hai) -->
+  <div id="home" class="hero">
+    <h1>SIUUU! <br> Welcome to <span style="color:#f5c518;">CR7 Universe</span></h1>
+    <p>Official fan hub of the greatest footballer in the world.<br>Get everything here - matches, lifestyle, and exclusive fan moments.</p>
+    <p style="color:#aaa; font-style:italic; margin-top:10px;">"I am not a perfectionist, but I like to feel that things are done well." – CR7</p>
+  </div>
+
+  <div class="container">
+    <div id="matches">
+      <div class="countdown-container">
+        <div class="countdown-box"><span class="countdown-number" id="days">00</span><span class="countdown-label">Days</span></div>
+        <div class="countdown-box"><span class="countdown-number" id="hours">00</span><span class="countdown-label">Hours</span></div>
+        <div class="countdown-box"><span class="countdown-number" id="minutes">00</span><span class="countdown-label">Mins</span></div>
+        <div class="countdown-box"><span class="countdown-number" id="seconds">00</span><span class="countdown-label">Secs</span></div>
+      </div>
+
+      <h2 class="section-title">🔥 Upcoming Match</h2>
+      <div class="duo-card" style="margin-bottom: 20px;">
+        <div class="team-logos">
+          <!-- ✅ Logos ka link fixed kar diya gaya hai -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/1/15/Al_Nassr_FC_logo.svg.png" alt="Al-Nassr">
+          <span>VS</span>
+          <img src="https://upload.wikimedia.org/wikipedia/en/1/15/Al_Hilal_Saudi_FC_Logo.svg.png" alt="Al-Hilal">
+        </div>
+        <h3>Al-Nassr vs Al-Hilal</h3>
+        <p style="color: #aaa; font-size: 14px;">📅 15 August 2026 | 🕗 8:30 PM IST</p>
+        <p style="font-size: 13px;">🏟️ King Saud University Stadium, Riyadh</p>
+        <p style="margin-top: 10px;">📊 Attending: <span id="countDisplay" style="color:#f5c518; font-weight:bold;">12</span></p>
+        <button id="attendBtn" class="attend-btn">✅ I'm Going!</button>
+        <button class="watch-btn">🔴 Watch from Home</button>
+      </div>
+
+      <h2 class="section-title">🔥 Upcoming Fixtures</h2>
+      <div class="fixtures-grid">
+        <div class="duo-card">
+          <h3>Al-Nassr vs Al-Ittihad</h3>
+          <p style="color: #aaa; font-size: 14px;">📅 22 August 2026 | 🕗 9:00 PM IST</p>
+          <p style="font-size: 13px;">🏟️ King Abdullah Sports City, Jeddah</p>
+          <span class="status-tag">Upcoming</span>
+        </div>
+        <div class="duo-card">
+          <h3>Al-Nassr vs Al-Shabab</h3>
+          <p style="color: #aaa; font-size: 14px;">📅 29 August 2026 | 🕗 8:00 PM IST</p>
+          <p style="font-size: 13px;">🏟️ Mrsool Park, Riyadh</p>
+          <span class="status-tag">Upcoming</span>
+        </div>
+      </div>
+
+      <h2 class="section-title">🏆 CR7's Iconic Performances</h2>
+      <div class="fixtures-grid">
+        <div class="duo-card past-match">
+          <div class="match-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Cristiano_Ronaldo_2014_%28cropped%29.jpg/800px-Cristiano_Ronaldo_2014_%28cropped%29.jpg" alt="CR7 UCL 2014"></div>
+          <h3>Real Madrid vs Atlético Madrid</h3>
+          <p style="font-size: 1.2rem; color: #f5c518; font-weight: bold;">4 - 1 (AET)</p>
+          <p style="color: #aaa; font-size: 14px;">🏆 UCL Final | 24 May 2014</p>
+          <p style="margin-top:5px;">CR7 scored the iconic 93rd-minute penalty to seal La Décima! 👑</p>
+        </div>
+        <div class="duo-card past-match">
+          <div class="match-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Portugal_vs_Spain_2018.jpg/800px-Portugal_vs_Spain_2018.jpg" alt="Portugal vs Spain"></div>
+          <h3>Portugal vs Spain</h3>
+          <p style="font-size: 1.2rem; color: #f5c518; font-weight: bold;">3 - 3</p>
+          <p style="color: #aaa; font-size: 14px;">🌍 World Cup Group Stage | 15 June 2018</p>
+          <p style="margin-top:5px;">A stunning 88th-minute free-kick for an unbelievable Hat-Trick! 🚀</p>
+        </div>
+        <div class="duo-card past-match">
+          <div class="match-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Cristiano_Ronaldo_Al_Nassr_2023.jpg/800px-Cristiano_Ronaldo_Al_Nassr_2023.jpg" alt="Al-Nassr vs Al-Fateh"></div>
+          <h3>Al-Nassr vs Al-Fateh</h3>
+          <p style="font-size: 1.2rem; color: #f5c518; font-weight: bold;">3 - 0</p>
+          <p style="color: #aaa; font-size: 14px;">🇸🇦 Saudi Pro League | 27 May 2023</p>
+          <p style="margin-top:5px;">Ronaldo bagged a superb brace (Double) to keep Al-Nassr in the title race! 💛</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="lifestyle" style="margin-top: 50px; padding-top: 20px;">
+      <h2 class="section-title">👔 CR7 Lifestyle</h2>
+      <div class="duo-card">
+        <h3>Fashion & Luxury</h3>
+        <p style="color:#aaa;">CR7 is not just a footballer, he is a global fashion icon. From his CR7 brand clothing line to his luxury car collection and business ventures, explore the lavish lifestyle of the greatest of all time.</p>
+        <a href="https://www.cr7.com/" target="_blank" class="ambassador-link">🛒 Visit CR7 Official Store</a>
+        <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#CR7Style</span>
+      </div>
+    </div>
+
+    <div id="stats" style="margin-top: 50px; padding-top: 20px;">
+      <h2 class="section-title">📊 CR7 Stats</h2>
+      <div class="duo-card">
+        <h3>Career Records</h3>
+        <p style="color:#aaa;">Over 900 career goals, 5 Ballon d'Ors, 5 Champions League titles, and countless records broken. Dive into the incredible numbers behind the living legend's journey.</p>
+        <a href="https://www.transfermarkt.com/cristiano-ronaldo/leistungsdatendetails/spieler/8198" target="_blank" class="ambassador-link">📈 Check Full Stats</a>
+        <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#GOAT</span>
+      </div>
+    </div>
+
+    <div id="fanzone" style="margin-top: 50px; padding-top: 20px;">
+      <h2 class="section-title">💛 CR7 Fan Zone</h2>
+      <div class="duo-card">
+        <h3>Join the Army</h3>
+        <p style="color:#aaa;">You are part of the CR7 Army now! Share your fan moments, watch exclusive interviews, and stay updated with the latest news from the world of Cristiano Ronaldo.</p>
+        <a href="https://www.instagram.com/cristiano/" target="_blank" class="ambassador-link">📸 Follow CR7 on Instagram</a>
+        <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#CR7Army</span>
+      </div>
+    </div>
+
+    <h2 class="section-title">🌟 Fan Ambassadors</h2>
+    <div class="fixtures-grid">
+      
+      <!-- iShowSpeed Card - Video Error fixed! (Ab iframe hata kar button daal diya) -->
+      <div class="duo-card">
+        <div class="ambassador-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IShowSpeed_at_ESPN_2024.jpg/800px-IShowSpeed_at_ESPN_2024.jpg" alt="iShowSpeed">
+          <h3 style="margin:0; color:#f5c518; display:flex; align-items:center;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_Logo_%282013-2017%29.svg.png" style="width:20px; height:15px; margin-right:8px; background:none;"> iShowSpeed
+          </h3>
+        </div>
+        <p style="color:#aaa; margin-top: 10px;">The world's #1 Ronaldo superfan. Click the button below to watch Speed's iconic CR7 reaction!</p>
+        
+        <!-- Video replaced with button to avoid errors -->
+        <a href="https://www.youtube.com/watch?v=_wZvq29mPOY" target="_blank" class="ambassador-link" style="margin-top: 10px;">▶ Watch Reaction on YouTube</a>
+
+        <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#SpeedXCR7</span>
+        <div style="margin-top: 12px;">
+          <a href="https://www.youtube.com/@IShowSpeed" target="_blank" class="ambassador-link">▶ YouTube</a>
+          <a href="https://www.instagram.com/ishowspeed/" target="_blank" class="ambassador-link">📸 Instagram</a>
+        </div>
+      </div>
+
+      <div class="duo-card">
+        <div class="ambassador-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Georgina_Rodr%C3%ADguez_2023.jpg/800px-Georgina_Rodr%C3%ADguez_2023.jpg" alt="Georgina Rodriguez">
+          <h3 style="margin:0; color:#f5c518;">👑 Georgina Rodriguez (Fiona)</h3>
+        </div>
+        <p style="color:#aaa; margin-top: 10px;">Ronaldo's better half and fashion icon. Her style evolution, family moments, and exclusive section for CR7 brand outfits.</p>
+        <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#GioStyle</span>
+        <div style="margin-top: 12px;">
+          <a href="https://www.instagram.com/georginagio/" target="_blank" class="ambassador-link">📸 Follow on Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">💬 CR7 Fan Shoutbox</h2>
+    <div class="shoutbox-container">
+      <div class="shoutbox-form">
+        <input type="text" id="shoutName" placeholder="Your name (e.g., CR7 Fan)">
+        <input type="text" id="shoutMsg" placeholder="Write your message for CR7...">
+        <button id="shoutBtn" class="attend-btn">Send 💬</button>
+      </div>
+      <div id="shoutboxMessages" class="shoutbox-messages"></div>
+    </div>
+  </div>
+
+  <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

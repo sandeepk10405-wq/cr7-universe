@@ -1,0 +1,99 @@
+html { scroll-behavior: smooth; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body { background: #0a0a0a; color: #ffffff; padding: 20px; }
+
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #2a2a2a; margin-bottom: 20px; }
+.logo { font-size: 24px; font-weight: bold; color: #f5c518; }
+.nav-links a { color: #aaa; text-decoration: none; margin-left: 20px; font-size: 14px; transition: 0.3s; }
+.nav-links a:hover { color: #f5c518; }
+
+/* ✅ Hero Image Fixed with direct link */
+.hero { 
+  text-align: center; 
+  margin-bottom: 40px; 
+  padding: 50px 20px;
+  border-radius: 20px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://upload.wikimedia.org/wikipedia/commons/8/8f/Cristiano_Ronaldo_2014_%28cropped%29.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.hero h1 { font-size: 40px; margin-bottom: 10px; line-height: 1.2; }
+.hero p { color: #ddd; max-width: 600px; margin: 0 auto; }
+
+.container { max-width: 700px; margin: 0 auto; }
+.section-title { margin: 30px 0 15px 0; border-left: 4px solid #f5c518; padding-left: 10px; }
+
+.fixtures-grid { display: flex; flex-direction: column; gap: 15px; margin-bottom: 10px; }
+.duo-card { background: #1e1e1e; border-radius: 12px; padding: 20px; border: 1px solid #2a2a2a; }
+.duo-card h3 { color: #f5c518; margin-bottom: 5px; }
+.duo-card p { color: #ddd; line-height: 1.5; font-size: 14px; }
+
+.past-match { border-left: 4px solid #f5c518; }
+.status-tag { display: inline-block; background: #f5c518; color: #121212; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-top: 8px; }
+
+.countdown-container { display: flex; justify-content: space-between; background: #1e1e1e; padding: 15px; border-radius: 12px; margin-bottom: 15px; border: 1px solid #2a2a2a; }
+.countdown-box { text-align: center; flex: 1; }
+.countdown-number { display: block; font-size: 24px; font-weight: 900; color: #f5c518; }
+.countdown-label { font-size: 12px; color: #aaa; text-transform: uppercase; margin-top: 2px; }
+
+.team-logos { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+.team-logos img { width: 50px; height: 50px; object-fit: contain; background: #ffffff; border-radius: 50%; padding: 5px; }
+.team-logos span { color: #f5c518; font-weight: bold; font-size: 18px; }
+.match-image img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; border: 1px solid #2a2a2a; }
+.ambassador-img { display: flex; align-items: center; margin-bottom: 10px; }
+.ambassador-img img { width: 60px; height: 60px; object-fit: cover; border-radius: 50%; border: 2px solid #f5c518; margin-right: 15px; }
+
+.ambassador-link { display: inline-block; margin-top: 5px; margin-right: 8px; color: #f5c518; border: 1px solid #f5c518; padding: 6px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 13px; transition: all 0.3s ease; }
+.ambassador-link:hover { background: #f5c518; color: #121212; transform: scale(1.05); }
+
+.attend-btn { background: #f5c518; color: #121212; border: none; padding: 10px 20px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-top: 10px; margin-right: 10px; cursor: pointer; transition: 0.3s; }
+.attend-btn:hover { transform: scale(1.05); background: #ffd700; }
+.attend-btn:disabled { background: #444; color: #888; transform: none !important; opacity: 0.6; cursor: not-allowed; }
+.watch-btn { background: transparent; color: #f5c518; border: 2px solid #f5c518; padding: 8px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-top: 10px; cursor: pointer; transition: 0.3s; }
+.watch-btn:hover { background: #f5c518; color: #000; }
+
+.shoutbox-container { background: #1e1e1e; border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 1px solid #2a2a2a; }
+.shoutbox-form { display: flex; gap: 10px; flex-wrap: wrap; }
+.shoutbox-form input { flex: 1; background: #2a2a2a; border: 1px solid #444; color: #ffffff; padding: 10px; border-radius: 8px; outline: none; font-size: 14px; min-width: 120px; }
+.shoutbox-form input:focus { border-color: #f5c518; }
+.shoutbox-messages { margin-top: 15px; max-height: 200px; overflow-y: auto; }
+.shout-msg { background: #2a2a2a; padding: 12px; border-radius: 8px; margin-bottom: 10px; border-left: 3px solid #f5c518; }
+.shout-msg strong { color: #f5c518; font-size: 15px; }
+.shout-msg span { color: #888; font-size: 11px; margin-left: 8px; }
+.shout-msg p { margin: 5px 0 0 0; color: #ddd; font-size: 14px; }
+
+.footer { text-align: center; color: #666; font-size: 13px; margin-top: 50px; border-top: 1px solid #2a2a2a; padding-top: 20px; }
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #f5c518;
+  color: #121212;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 12px rgba(245, 197, 24, 0.5);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+.scroll-top-btn:hover {
+  background: #ffd700;
+  transform: scale(1.1);
+}
+
+@media (max-width: 480px) { 
+  .hero h1 { font-size: 28px; } 
+  .nav-links a { margin-left: 10px; font-size: 12px; } 
+  .countdown-number { font-size: 18px; } 
+}
+@media (max-width: 600px) { 
+  .shoutbox-form { flex-direction: column; gap: 8px; } 
+  .shoutbox-form input { width: 100%; } 
+  .shoutbox-form button { width: 100%; margin-top: 5px; } 
+}
