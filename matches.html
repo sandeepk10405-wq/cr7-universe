@@ -68,7 +68,6 @@
       <p style="margin-top: 10px;">📊 Attending: <span id="countDisplay" style="color:#f5c518; font-weight:bold;">12</span></p>
       
       <button id="attendBtn" class="attend-btn">✅ I'm Going!</button>
-      <!-- ✅ FIXED: इसमें onclick="openModal()" जोड़ दिया है -->
       <button id="openStreamBtn" class="watch-btn" onclick="openModal()">🔴 Watch from Home</button>
     </div>
 
@@ -105,18 +104,19 @@
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
 
-  <!-- 🟢 STREAM MODAL (अब यह onclick="closeModal()" से बंद होगा) -->
+  <!-- 🟢 STREAM MODAL (Video link update kar diya gaya hai) -->
   <div id="streamModal" class="modal-overlay">
     <div class="modal-box">
       <span class="close-modal" onclick="closeModal()">×</span>
       <h3>🔴 Live Watch Party</h3>
       <div class="modal-video">
-        <iframe src="https://www.youtube.com/embed/vQyNz3Qq7Q4" title="Live Match Stream" frameborder="0" allowfullscreen></iframe>
+        <!-- ✅ Yahan video ka link change kar diya hai (Ab yeh ek working highlight video hai) -->
+        <iframe src="https://www.youtube.com/embed/o71FZ8fQ5-U" title="Al Nassr vs Al Hilal Highlights" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
-  <!-- ✅ यहाँ Inline JavaScript डाली है, ताकि कोई भी बिना script.js के काम करे -->
+  <!-- ✅ Inline JavaScript for Modal -->
   <script>
     function openModal() {
       document.getElementById('streamModal').style.display = 'flex';
@@ -126,7 +126,7 @@
     }
   </script>
 
-  <!-- Main Script (Existing JS) -->
+  <!-- Main Script -->
   <script src="script.js"></script>
 </body>
 </html>
