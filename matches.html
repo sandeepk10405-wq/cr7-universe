@@ -4,34 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matches - CR7 Universe</title>
-  <!-- Main CSS file use kar rahe hain (Same styling) -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Extra CSS for the Stream Modal -->
   <style>
-    /* Modal Overlay */
+    /* Modal Popup Styles */
     .modal-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0, 0, 0, 0.85);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 10000;
-      padding: 20px;
+      display: none; justify-content: center; align-items: center;
+      z-index: 10000; padding: 20px;
     }
     .modal-box {
-      background: #1e1e1e;
-      padding: 20px;
-      border-radius: 15px;
-      max-width: 700px;
-      width: 100%;
-      border: 1px solid #f5c518;
+      background: #1e1e1e; padding: 20px; border-radius: 15px;
+      max-width: 700px; width: 100%; border: 1px solid #f5c518;
       position: relative;
     }
     .close-modal {
-      position: absolute;
-      top: 10px; right: 15px;
+      position: absolute; top: 10px; right: 15px;
       color: #f5c518; font-size: 24px; cursor: pointer; font-weight: bold;
     }
     .modal-box h3 { color: #f5c518; margin-top: 5px; }
@@ -41,8 +29,8 @@
     .modal-video iframe {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     }
-    /* Modal Button text change */
-    #openStreamBtn { cursor: pointer; }
+    /* Override for Back to Home button */
+    .back-home-btn { text-decoration: none; display: inline-block; margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -59,7 +47,7 @@
   </nav>
 
   <div class="container">
-    <!-- Countdown Timer (Same as before) -->
+    <!-- Countdown Timer -->
     <div class="countdown-container">
       <div class="countdown-box"><span class="countdown-number" id="days">00</span><span class="countdown-label">Days</span></div>
       <div class="countdown-box"><span class="countdown-number" id="hours">00</span><span class="countdown-label">Hours</span></div>
@@ -78,9 +66,10 @@
       <p style="color: #aaa; font-size: 14px;">📅 15 August 2026 | 🕗 8:30 PM IST</p>
       <p style="font-size: 13px;">🏟️ King Saud University Stadium, Riyadh</p>
       <p style="margin-top: 10px;">📊 Attending: <span id="countDisplay" style="color:#f5c518; font-weight:bold;">12</span></p>
+      
       <button id="attendBtn" class="attend-btn">✅ I'm Going!</button>
-      <!-- 👇 Yeh button ab naya modal open karega 👇 -->
-      <button id="openStreamBtn" class="watch-btn">🔴 Watch from Home</button>
+      <!-- ✅ FIXED: इसमें onclick="openModal()" जोड़ दिया है -->
+      <button id="openStreamBtn" class="watch-btn" onclick="openModal()">🔴 Watch from Home</button>
     </div>
 
     <h2 class="section-title">🔥 Upcoming Fixtures</h2>
@@ -102,44 +91,40 @@
     <h2 class="section-title">🏆 CR7's Iconic Performances</h2>
     <div class="fixtures-grid">
       <div class="duo-card past-match">
-        <div class="match-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Cristiano_Ronaldo_2014_%28cropped%29.jpg/800px-Cristiano_Ronaldo_2014_%28cropped%29.jpg" alt="CR7 UCL 2014"></div>
+        <div class="match-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Cristiano_Ronaldo_2014_%28cropped%29.jpg/800px-Cristiano_Ronaldo_2014_%28cropped%29.jpg"></div>
         <h3>Real Madrid vs Atlético Madrid</h3>
-        <p style="font-size: 1.2rem; color: #f5c518; font-weight: bold;">4 - 1 (AET)</p>
-        <p style="color: #aaa; font-size: 14px;">🏆 UCL Final | 24 May 2014</p>
-        <p style="margin-top:5px;">CR7 scored the iconic 93rd-minute penalty to seal La Décima! 👑</p>
-      </div>
-      <div class="duo-card past-match">
-        <div class="match-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Portugal_vs_Spain_2018.jpg/800px-Portugal_vs_Spain_2018.jpg" alt="Portugal vs Spain"></div>
-        <h3>Portugal vs Spain</h3>
-        <p style="font-size: 1.2rem; color: #f5c518; font-weight: bold;">3 - 3</p>
-        <p style="color: #aaa; font-size: 14px;">🌍 World Cup Group Stage | 15 June 2018</p>
-        <p style="margin-top:5px;">A stunning 88th-minute free-kick for an unbelievable Hat-Trick! 🚀</p>
-      </div>
-      <div class="duo-card past-match">
-        <div class="match-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Cristiano_Ronaldo_Al_Nassr_2023.jpg/800px-Cristiano_Ronaldo_Al_Nassr_2023.jpg" alt="Al-Nassr vs Al-Fateh"></div>
-        <h3>Al-Nassr vs Al-Fateh</h3>
-        <p style="font-size: 1.2rem; color: #f5c518; font-weight: bold;">3 - 0</p>
-        <p style="color: #aaa; font-size: 14px;">🇸🇦 Saudi Pro League | 27 May 2023</p>
-        <p style="margin-top:5px;">Ronaldo bagged a superb brace (Double) to keep Al-Nassr in the title race! 💛</p>
+        <p style="color:#f5c518; font-weight:bold;">4 - 1 (AET)</p>
+        <p style="color:#aaa; font-size: 14px;">🏆 UCL Final | 24 May 2014</p>
       </div>
     </div>
+
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
   </div>
 
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
 
-  <!-- 🟢 STREAM POPUP MODAL (Yahan video chale ga) -->
+  <!-- 🟢 STREAM MODAL (अब यह onclick="closeModal()" से बंद होगा) -->
   <div id="streamModal" class="modal-overlay">
     <div class="modal-box">
       <span class="close-modal" onclick="closeModal()">×</span>
       <h3>🔴 Live Watch Party</h3>
-      <p style="color:#aaa; font-size:14px;">Join the CR7 Army and watch Al-Nassr vs Al-Hilal live!</p>
       <div class="modal-video">
-        <!-- You can replace this link with any live stream YouTube link -->
-        <iframe src="https://www.youtube.com/embed/vQyNz3Qq7Q4" title="Live Match Stream" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/vQyNz3Qq7Q4" title="Live Match Stream" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>
+
+  <!-- ✅ यहाँ Inline JavaScript डाली है, ताकि कोई भी बिना script.js के काम करे -->
+  <script>
+    function openModal() {
+      document.getElementById('streamModal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('streamModal').style.display = 'none';
+    }
+  </script>
 
   <!-- Main Script (Existing JS) -->
   <script src="script.js"></script>
