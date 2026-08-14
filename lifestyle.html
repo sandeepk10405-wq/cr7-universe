@@ -15,7 +15,7 @@
     
     .highlight { color: #f5c518; font-weight: bold; }
     
-    /* Perfect Image Settings (No Cropping) */
+    /* Single Image Styling */
     .lifestyle-img {
       width: 100%;
       height: auto;
@@ -25,6 +25,26 @@
       margin-bottom: 15px;
       border: 1px solid #2a2a2a;
       background: #0a0a0a;
+    }
+
+    /* Workout Gallery Styling (12 Photos) */
+    .workout-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .workout-gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #2a2a2a;
+      transition: transform 0.3s ease;
+    }
+    .workout-gallery img:hover {
+      transform: scale(1.05);
+      border-color: #f5c518;
     }
 
     /* Video Embed Style */
@@ -56,10 +76,10 @@
     <h2 class="section-title">👔 CR7 Lifestyle, Diet & Fitness</h2>
     <p style="color:#aaa; text-align: center; margin-bottom: 25px;">Explore the secrets behind the world's greatest athlete: his luxurious brand, his multi-million dollar garage, his scientific diet, and his intense workout routine.</p>
 
-    <!-- 1. Fashion & The CR7 Brand -->
+    <!-- 1. Fashion & The CR7 Brand (✅ User's Link Added) -->
     <div class="duo-card lifestyle-card">
       <h3>👕 The CR7 Empire: Fashion, Fragrance & Footwear</h3>
-      <img class="lifestyle-img" src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Cristiano_Ronaldo_Real_Madrid_%282%29.jpg" alt="CR7 Style and Fashion">
+      <img class="lifestyle-img" src="https://www.cristianoronaldo.com/assets/images/brand_ursu.jpg?t=2067825244" alt="CR7 Style and Fashion">
       <p>Cristiano Ronaldo is much more than a footballer; he has built a <span class="highlight">multi-million dollar global lifestyle brand</span>. The <span class="highlight">CR7 Brand</span> is a statement of style, confidence, and boldness. It isn't just limited to football boots; it encompasses a full lifestyle collection.</p>
       <ul>
         <li><strong>Premium Denim & Streetwear:</strong> Ronaldo designs stylish jeans, hoodies, and jackets that reflect his modern, urban fashion sense.</li>
@@ -68,10 +88,10 @@
       </ul>
     </div>
 
-    <!-- 2. Cars Collection ($50 Million+) -->
+    <!-- 2. Cars Collection ($50 Million+) (✅ User's Link Added) -->
     <div class="duo-card lifestyle-card">
       <h3>🏎️ The $50 Million Garage: Ronaldo's Car Collection</h3>
-      <img class="lifestyle-img" src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Bugatti_Chiron_001.jpg" alt="Bugatti Chiron Ronaldo Car">
+      <img class="lifestyle-img" src="https://img.allfootballapp.com/www/M00/21/B0/720x-/-/-/CgAGVWFsYSSARM-IAAI-Q29DLC8816.jpg" alt="Bugatti Chiron Ronaldo Car">
       <p>Step into the private garage of Cristiano Ronaldo, and you will find what many consider a museum of automotive engineering. His collection is not just about speed; it is about exclusivity and rarity. Here are the crown jewels of his <span class="highlight">$50 million fleet</span>:</p>
       <ul>
         <li><strong>Bugatti Chiron (Limited Edition):</strong> Valued at over $3 million. <span class="highlight">Only 500 units exist in the entire world.</span> Ronaldo’s Chiron is a masterpiece of hypercar engineering, capable of hitting over 400 km/h.</li>
@@ -82,25 +102,24 @@
       </ul>
     </div>
 
-    <!-- 3. Private Jet (Gulfstream G200) -->
+    <!-- 3. Private Jet (Bombardier Global Express XRS) (✅ User's Link Added) -->
     <div class="duo-card lifestyle-card">
-      <h3>✈️ The Gulfstream G200: Ronaldo's Private Jet</h3>
-      <img class="lifestyle-img" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Gulfstream_G200_Silber_%286755533211%29.jpg" alt="Gulfstream G200 Private Jet">
-      <p>To maintain his brutal schedule across continents—playing matches in Saudi Arabia, attending events in Europe, and vacationing with his family—Ronaldo relies on his highly customized <span class="highlight">Gulfstream G200 private jet</span>.</p>
+      <h3>✈️ The Bombardier Jet: Ronaldo's Private Jet</h3>
+      <img class="lifestyle-img" src="https://supercarblondie.com/wp-content/uploads/Cristiano-Ronaldo-owns-one-of-the-most-stunning-private-jets-ever-made-a-Bombardier-Global-Express-XRS-customized-for-him-3.webp" alt="Bombardier Global Express XRS Private Jet">
+      <p>To maintain his brutal schedule across continents—playing matches in Saudi Arabia, attending events in Europe, and vacationing with his family—Ronaldo relies on his highly customized <span class="highlight">Bombardier Global Express XRS private jet</span>.</p>
       <ul>
-        <li><strong>Price Tag:</strong> A brand new Gulfstream G200 costs roughly <span class="highlight">$40 to $45 million</span>.</li>
+        <li><strong>Price Tag:</strong> A brand new Bombardier Global Express XRS costs roughly <span class="highlight">$40 to $45 million</span>.</li>
         <li><strong>Customized Features:</strong> Ronaldo’s jet is not a standard model. It features a built-in mini-gym, a private bedroom suite, large leather reclining seats, and a custom audio-visual entertainment system.</li>
-        <li><strong>Can anyone buy one?</strong> Absolutely yes. While the Gulfstream G200 is a commercial business jet that any billionaire can purchase, Ronaldo's specific interior modifications make his one of a kind. However, regular millionaires can easily buy a standard used G200 for about $20-25 million today.</li>
+        <li><strong>Can anyone buy one?</strong> Absolutely yes. While this is a commercial business jet that any billionaire can purchase, Ronaldo's specific interior modifications make his one of a kind. However, regular millionaires can easily buy a standard used one for about $20-25 million today.</li>
       </ul>
     </div>
 
-    <!-- 4. The Famous Water & Diet Incident (✅ Video Link Fixed with your new link) -->
+    <!-- 4. The Famous Water & Diet Incident (✅ New Video Link from User) -->
     <div class="duo-card lifestyle-card">
       <h3>🥤 The "Coca-Cola" Incident & His Scientific Diet</h3>
       <p>One of the most viral moments of Ronaldo's career wasn't a goal—it was a press conference before a Euro 2020 match where he moved two Coca-Cola bottles aside and held up a water bottle, saying, <span class="highlight">"Drink water, not Coca-Cola."</span> This moment summed up his legendary discipline.</p>
       
       <div class="video-wrapper">
-        <!-- ✅ यहाँ आपके दिए गए नए YouTube Shorts का लिंक डाला है -->
         <iframe src="https://www.youtube.com/embed/_nw7FOgOgtA" title="Ronaldo Coca-Cola Water Incident" frameborder="0" allowfullscreen></iframe>
       </div>
 
@@ -118,12 +137,28 @@
       <p style="margin-top:10px;">He completely eliminates sugary beverages, processed junk food, and alcohol. He drinks at least <span class="highlight">2.5 to 3 liters of plain water</span> daily, which is the primary reason he remains injury-free and incredibly agile.</p>
     </div>
 
-    <!-- 5. Detailed Fitness & Workout Routine -->
+    <!-- 5. Detailed Fitness & Workout Routine (✅ 12 Image Gallery Added) -->
     <div class="duo-card lifestyle-card">
       <h3>💪 5-Hour Daily Fitness Routine & Recovery</h3>
-      <img class="lifestyle-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800" alt="CR7 Workout">
-      <p>To maintain his chiseled physique, Ronaldo dedicates nearly <span class="highlight">5 hours a day</span> to fitness and recovery, even on rest days.</p>
-      <ul>
+      <p>To maintain his chiseled physique, Ronaldo dedicates nearly <span class="highlight">5 hours a day</span> to fitness and recovery, even on rest days. Check out his legendary workouts below!</p>
+      
+      <!-- 12 Gym Images Grid -->
+      <div class="workout-gallery">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Cristiano_Ronaldo_2014_%28cropped%29.jpg/640px-Cristiano_Ronaldo_2014_%28cropped%29.jpg" alt="CR7 Gym">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800" alt="CR7 Workout">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Cristiano_Ronaldo_2014_%28cropped%29.jpg/640px-Cristiano_Ronaldo_2014_%28cropped%29.jpg" alt="CR7 Gym">
+        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800" alt="Gym training">
+        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800" alt="Workout motivation">
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800" alt="CR7 Strength">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Cristiano_Ronaldo_2014_%28cropped%29.jpg/640px-Cristiano_Ronaldo_2014_%28cropped%29.jpg" alt="CR7 Gym">
+        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800" alt="Cardio">
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800" alt="Fitness">
+        <img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=800" alt="Squats">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Cristiano_Ronaldo_2014_%28cropped%29.jpg/640px-Cristiano_Ronaldo_2014_%28cropped%29.jpg" alt="CR7 Gym">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800" alt="CR7 Workout">
+      </div>
+
+      <ul style="margin-top: 15px;">
         <li><strong>High-Intensity Interval Training (HIIT):</strong> He frequently uses sprint intervals and cycling sessions to boost his cardiovascular endurance and explosive speed.</li>
         <li><strong>Olympic Weightlifting:</strong> Ronaldo focuses on compound lifts like squats, deadlifts, and clean-and-jerks. This builds raw muscle power, allowing him to jump higher and hold off defenders.</li>
         <li><strong>Core and Agility:</strong> Planks, hanging leg raises, and resistance band drills keep his core tight, giving him the incredible balance he is famous for.</li>
