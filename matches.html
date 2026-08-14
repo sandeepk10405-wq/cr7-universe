@@ -23,6 +23,13 @@
       color: #f5c518; font-size: 24px; cursor: pointer; font-weight: bold;
     }
     .modal-box h3 { color: #f5c518; margin-top: 5px; }
+    .modal-video-controls {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+      margin: 15px 0;
+    }
+    .modal-video-controls .watch-btn {
+      margin-top: 0; font-size: 12px; padding: 6px 14px;
+    }
     .modal-video {
       position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin-top: 10px;
     }
@@ -104,25 +111,46 @@
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
 
-  <!-- 🟢 STREAM MODAL (Video link update kar diya gaya hai) -->
+  <!-- 🟢 STREAM MODAL (Multi-Video Switcher) -->
   <div id="streamModal" class="modal-overlay">
     <div class="modal-box">
       <span class="close-modal" onclick="closeModal()">×</span>
-      <h3>🔴 Live Watch Party</h3>
+      <h3>🔴 CR7 Watch Party</h3>
+      
+      <!-- Video Switching Buttons -->
+      <div class="modal-video-controls">
+        <button class="watch-btn" onclick="changeVideo('FHs_qK_qELs')">📺 Match Highlights</button>
+        <button class="watch-btn" onclick="changeVideo('k5fqZoz-W8M')">⚽ Top Goals</button>
+        <button class="watch-btn" onclick="changeVideo('PYR0R6Xxn5I')">✨ Best Moments</button>
+      </div>
+
       <div class="modal-video">
-        <!-- ✅ Yahan video ka link change kar diya hai (Ab yeh ek working highlight video hai) -->
-        <iframe src="https://www.youtube.com/embed/o71FZ8fQ5-U" title="Al Nassr vs Al Hilal Highlights" frameborder="0" allowfullscreen></iframe>
+        <!-- Default Video (First Link) with Custom Title -->
+        <iframe id="streamVideo" src="https://www.youtube.com/embed/FHs_qK_qELs" title="CR7 Universe - Match Highlights" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
-  <!-- ✅ Inline JavaScript for Modal -->
+  <!-- ✅ JavaScript for Modal & Video Switcher -->
   <script>
+    // Open Modal
     function openModal() {
       document.getElementById('streamModal').style.display = 'flex';
     }
+    // Close Modal
     function closeModal() {
       document.getElementById('streamModal').style.display = 'none';
+    }
+    // Function to change video instantly
+    function changeVideo(videoId) {
+      document.getElementById('streamVideo').src = "https://www.youtube.com/embed/" + videoId;
+    }
+    // Close modal if user clicks outside the box
+    window.onclick = function(event) {
+      var modal = document.getElementById('streamModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
     }
   </script>
 
