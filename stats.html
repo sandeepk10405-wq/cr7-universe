@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stats - CR7 Universe</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Chart.js Library for Graph -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    .chart-container {
+      position: relative; height: 300px; width: 100%; margin: 20px 0;
+      background: #1e1e1e; padding: 20px; border-radius: 12px;
+    }
+    .debate-box { margin-top: 30px; }
+    .debate-input {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;
+    }
+    .debate-input input {
+      flex: 1; background: #2a2a2a; border: 1px solid #444;
+      color: #ffffff; padding: 10px; border-radius: 8px; outline: none;
+      font-size: 14px; min-width: 120px;
+    }
+    .debate-input input:focus { border-color: #f5c518; }
+    .debate-input button {
+      background: #f5c518; color: #121212; border: none; padding: 10px 20px;
+      border-radius: 20px; font-weight: bold; cursor: pointer;
+    }
+    .debate-msg {
+      background: #2a2a2a; padding: 12px; border-radius: 8px; margin-bottom: 10px;
+      border-left: 3px solid #f5c518;
+    }
+    .debate-msg strong { color: #f5c518; font-size: 15px; }
+    .debate-msg span { color: #888; font-size: 11px; margin-left: 8px; }
+    .debate-msg p { margin: 5px 0 0 0; color: #ddd; font-size: 14px; }
+    .back-home-btn { text-decoration: none; display: inline-block; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">⚽ CR7</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="lifestyle.html">Lifestyle</a>
+      <a href="matches.html">Matches</a>
+      <a href="stats.html" style="color:#f5c518;">Stats</a>
+      <a href="fanzone.html">Fan Zone</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="section-title">📊 CR7 Stat Center</h2>
+    <div class="duo-card">
+      <h3>Career Goals by Season (Chart)</h3>
+      <p style="color:#aaa; margin-bottom: 10px;">Check out the legendary goal-scoring consistency of the GOAT over the years!</p>
+      
+      <!-- The Graph Container -->
+      <div class="chart-container">
+        <canvas id="cr7Chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Fan Debate Section -->
+    <div class="duo-card debate-box">
+      <h3>💬 Fan Debate & Discussion</h3>
+      <p style="color:#aaa;">Share your thoughts! Who is the greatest of all time? What's your prediction for Al-Nassr's next match?</p>
+      
+      <div class="debate-input">
+        <input type="text" id="debateName" placeholder="Your name (e.g., CR7 Fan)">
+        <input type="text" id="debateMsg" placeholder="Write your debate...">
+        <button id="debateBtn" class="attend-btn">Post Debate 💬</button>
+      </div>
+      
+      <div id="debateMessages" class="shoutbox-messages" style="max-height: 250px; overflow-y: auto; margin-top: 10px;">
+        <!-- Debates will appear here -->
+      </div>
+    </div>
+
+    <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
+  </div>
+
+  <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
+  <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
+
+  <script>
+    // --- 1. CHART.JS GRAPH LOGIC ---
+    document.addEventListener("DOMContentLoaded", function() {
+      const ctx = document.getElementById('cr7Chart').getContext('2d');
+      
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+          datasets: [{
+            label: 'Goals per Season',
+            data: [61, 61, 54, 53, 52, 45, 44, 40, 31, 28, 30, 32], // Approximate data for illustration
+            backgroundColor: '#f5c518',
+            borderColor: '#121212',
+            borderWidth: 2,
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { backgroundColor: '#121212', titleColor: '#f5c518', bodyColor: '#fff' }
+          },
+          scales: {
+            y: { 
+              beginAtZero: true, 
+              grid: { color: '#333' }, 
+              ticks: { color: '#aaa' } 
+            },
+            x: { 
+              grid: { display: false }, 
+              ticks: { color: '#aaa' } 
+            }
+          }
+        }
+      });
+    });
+
+    // --- 2. FAN DEBATE LOGIC (Local Storage) ---
+    const debateBtn = document.getElementById('debateBtn');
+    const debateNameInput = document.getElementById('debateName');
+    const debateMsgInput = document.getElementById('debateMsg');
+    const debateContainer = document.getElementById('debateMessages');
+
+    let debates = JSON.parse(localStorage.getItem('cr7Debates')) || [];
+
+    function renderDebates() {
+      debateContainer.innerHTML = '';
+      debates.forEach(msg => {
+        const div = document.createElement('div');
+        div.className = 'debate-msg';
+        div.innerHTML = `<strong>${msg.name}</strong> <span>(${msg.time})</span><p>${msg.text}</p>`;
+        debateContainer.appendChild(div);
+      });
+      debateContainer.scrollTop = debateContainer.scrollHeight;
+    }
+    renderDebates();
+
+    function addDebate() {
+      const name = debateNameInput.value.trim() || 'CR7 Fan';
+      const text = debateMsgInput.value.trim();
+      if (!text) return;
+
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+
+      debates.push({ name, text, time });
+      localStorage.setItem('cr7Debates', JSON.stringify(debates));
+      
+      debateNameInput.value = '';
+      debateMsgInput.value = '';
+      renderDebates();
+    }
+
+    debateBtn.addEventListener('click', addDebate);
+    debateMsgInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') addDebate(); });
+    debateNameInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') addDebate(); });
+
+    // --- 3. BACK TO TOP BUTTON LOGIC ---
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+  <!-- Main Script for Timer/Sound (Only if needed, but we'll include it to ensure no breakage) -->
+  <script src="script.js"></script>
+</body>
+</html>
