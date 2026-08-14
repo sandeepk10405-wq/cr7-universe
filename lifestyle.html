@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lifestyle - CR7 Universe</title>
+  <title>Lifestyle, Diet & Fitness - CR7 Universe</title>
   <link rel="stylesheet" href="style.css">
+  
   <style>
-    .lifestyle-card { margin-bottom: 20px; }
-    .lifestyle-card h3 { color: #f5c518; margin-bottom: 5px; }
-    .lifestyle-card p { color: #ddd; line-height: 1.8; font-size: 15px; }
+    .lifestyle-card { margin-bottom: 25px; }
+    .lifestyle-card h3 { color: #f5c518; margin-bottom: 5px; font-size: 20px; }
+    .lifestyle-card p { color: #ddd; line-height: 1.8; font-size: 15px; margin-bottom: 10px; text-align: justify; }
     .lifestyle-card ul { color: #ddd; line-height: 1.8; font-size: 15px; padding-left: 20px; }
     .lifestyle-card ul li { margin-bottom: 8px; }
-    .back-home-btn { text-decoration: none; display: inline-block; margin-top: 20px; }
+    
     .highlight { color: #f5c518; font-weight: bold; }
+    
+    /* Video Embed Style */
+    .video-wrapper {
+      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+      border-radius: 10px; margin: 20px 0; border: 1px solid #f5c518;
+    }
+    .video-wrapper iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    }
+
+    .back-home-btn { text-decoration: none; display: inline-block; margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -30,40 +42,79 @@
 
   <div class="container">
     <h2 class="section-title">👔 CR7 Lifestyle, Diet & Fitness</h2>
-    <p style="color:#aaa; text-align: center; margin-bottom: 25px;">Discover the habits, training, and luxury that keep Cristiano Ronaldo at the top of the world.</p>
+    <p style="color:#aaa; text-align: center; margin-bottom: 25px;">Explore the secrets behind the world's greatest athlete: his luxurious brand, his multi-million dollar garage, his scientific diet, and his intense workout routine.</p>
 
-    <!-- 1. Fashion & Cars -->
+    <!-- 1. Fashion & The CR7 Brand -->
     <div class="duo-card lifestyle-card">
-      <h3>Fashion & Luxury: The CR7 Brand</h3>
-      <p>Cristiano Ronaldo is not just a footballer; he is a <span class="highlight">global fashion icon</span>. He launched his own clothing line, <span class="highlight">CR7 Brand</span>, which includes premium footwear, stylish underwear, and a signature fragrance collection. His style reflects confidence and success.</p>
-      <p>His car collection is one of the most impressive in the world, featuring over <span class="highlight">50 luxury vehicles</span> including a <span class="highlight">Bugatti Chiron</span>, a <span class="highlight">Lamborghini Aventador</span>, and a custom <span class="highlight">Rolls-Royce Cullinan</span>. The collection is worth over $50 million.</p>
-      <p>He also owns a customized <span class="highlight">Gulfstream G200 private jet</span> to travel across the globe for matches and business deals.</p>
+      <h3>👕 The CR7 Empire: Fashion, Fragrance & Footwear</h3>
+      <p>Cristiano Ronaldo is much more than a footballer; he has built a <span class="highlight">multi-million dollar global lifestyle brand</span>. The <span class="highlight">CR7 Brand</span> is a statement of style, confidence, and boldness. It isn't just limited to football boots; it encompasses a full lifestyle collection.</p>
+      <ul>
+        <li><strong>Premium Denim & Streetwear:</strong> Ronaldo designs stylish jeans, hoodies, and jackets that reflect his modern, urban fashion sense.</li>
+        <li><strong>Signature Fragrances:</strong> From "CR7" to "Legacy," his cologne line is one of the best-selling celebrity fragrances in Europe, known for its woody and spicy notes.</li>
+        <li><strong>Footwear & Underwear:</strong> His CR7 collection includes high-performance sneakers for everyday wear and a premium line of boxers and briefs, designed for both comfort and athletic aesthetic.</li>
+        <li><strong>Nike Mercurial Superfly:</strong> His partnership with Nike has produced some of the most iconic football boots in history, designed specifically for his blistering pace and finishing ability.</li>
+      </ul>
+      <p>Every piece of clothing he wears and designs is a reflection of his discipline off the pitch, making him a true fashion icon for millions of fans worldwide.</p>
     </div>
 
-    <!-- 2. Daily Diet Plan -->
+    <!-- 2. Cars Collection ($50 Million+) -->
     <div class="duo-card lifestyle-card">
-      <h3>🥗 The CR7 Diet Plan</h3>
-      <p>Ronaldo’s diet is a key part of his success. He follows a strict, high-protein, and low-sugar diet to maintain peak physical condition.</p>
+      <h3>🏎️ The $50 Million Garage: Ronaldo's Car Collection</h3>
+      <p>Step into the private garage of Cristiano Ronaldo, and you will find what many consider a museum of automotive engineering. His collection is not just about speed; it is about exclusivity and rarity. Here are the crown jewels of his <span class="highlight">$50 million fleet</span>:</p>
       <ul>
-        <li><strong>Breakfast:</strong> Whole-grain cereal, eggs, avocado, and fresh fruit.</li>
-        <li><strong>Lunch:</strong> Grilled chicken breast with brown rice, steamed broccoli, and a side salad.</li>
-        <li><strong>Dinner:</strong> Fresh fish (like cod or salmon) with vegetables and sweet potatoes.</li>
-        <li><strong>Snacks:</strong> Nuts, protein shakes, and fresh fruits like bananas or berries.</li>
+        <li><strong>Bugatti Chiron (Limited Edition):</strong> Valued at over $3 million. <span class="highlight">Only 500 units exist in the entire world.</span> Ronaldo’s Chiron is a masterpiece of hypercar engineering, capable of hitting over 400 km/h.</li>
+        <li><strong>Lamborghini Aventador:</strong> A bold and aggressive V12 monster. Ronaldo owns a custom matte-black Aventador, which is a rare sight on the roads even among millionaires.</li>
+        <li><strong>Rolls-Royce Cullinan:</strong> Often called the "Rolls-Royce of SUVs," this luxury vehicle costs around $400,000. It features bulletproof glass and a fully customized interior designed specifically for his family travels.</li>
+        <li><strong>Ferrari F12 TdF:</strong> One of the fastest Ferraris ever built, named after the famous Tour de France race. This car is incredibly rare, with fewer than 800 made worldwide.</li>
+        <li><strong>McLaren Senna:</strong> Named after the legendary F1 driver Ayrton Senna, this track-focused hypercar is worth over $1 million and is highly sought after by collectors globally.</li>
       </ul>
-      <p style="margin-top:10px;">He completely avoids sugary drinks, processed foods, and alcohol, drinking at least <span class="highlight">2-3 liters of water</span> daily.</p>
+      <p>Ronaldo often says he doesn't just buy cars; he invests in art. His garage is a testament to his passion for automotive perfection.</p>
     </div>
 
-    <!-- 3. Workout & Fitness Routine -->
+    <!-- 3. Private Jet (Gulfstream G200) -->
     <div class="duo-card lifestyle-card">
-      <h3>💪 Workout & Fitness Routine</h3>
-      <p>Ronaldo trains <span class="highlight">5 hours a day</span> to stay in incredible shape.</p>
+      <h3>✈️ The Gulfstream G200: Ronaldo's Private Jet</h3>
+      <p>To maintain his brutal schedule across continents—playing matches in Saudi Arabia, attending events in Europe, and vacationing with his family—Ronaldo relies on his highly customized <span class="highlight">Gulfstream G200 private jet</span>.</p>
       <ul>
-        <li><strong>Cardio:</strong> Sprint intervals, cycling, and treadmill sessions to boost stamina.</li>
-        <li><strong>Strength Training:</strong> Weightlifting, squats, and lunges to build muscle power.</li>
-        <li><strong>Core Workouts:</strong> Planks and crunches for a strong midsection.</li>
-        <li><strong>Recovery:</strong> Daily stretching, yoga, and ice baths to prevent injuries.</li>
+        <li><strong>Price Tag:</strong> A brand new Gulfstream G200 costs roughly <span class="highlight">$40 to $45 million</span>.</li>
+        <li><strong>Customized Features:</strong> Ronaldo’s jet is not a standard model. It features a built-in mini-gym, a private bedroom suite, large leather reclining seats, and a custom audio-visual entertainment system.</li>
+        <li><strong>Can anyone buy one?</strong> Absolutely yes. While the Gulfstream G200 is a commercial business jet that any billionaire can purchase, Ronaldo's specific interior modifications make his one of a kind. However, regular millionaires can easily buy a standard used G200 for about $20-25 million today.</li>
       </ul>
-      <p style="margin-top:10px;">He also gets at least <span class="highlight">8 hours of sleep</span> every night to allow his body to recover fully.</p>
+      <p>Owning a private jet is not a luxury for Ronaldo; it's a necessity that allows him to manage his empire while maintaining his peak performance on the field.</p>
+    </div>
+
+    <!-- 4. The Famous Water & Diet Incident (Video Embed) -->
+    <div class="duo-card lifestyle-card">
+      <h3>🥤 The "Coca-Cola" Incident & His Scientific Diet</h3>
+      <p>One of the most viral moments of Ronaldo's career wasn't a goal—it was a press conference before a Euro 2020 match where he moved two Coca-Cola bottles aside and held up a water bottle, saying, <span class="highlight">"Drink water, not Coca-Cola."</span> This moment summed up his legendary discipline.</p>
+      
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/KX1_jWZJkOQ" title="Ronaldo Coca-Cola Water Incident" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <p>His diet is the foundation of his longevity. At 40+, Ronaldo still performs at a level that defies age because he follows a strict <span class="highlight">high-protein, low-sugar, and low-carb</span> diet plan (often referred to as the "CR7 Diet").</p>
+      
+      <h4 style="color:#f5c518; margin-top:10px;">🥗 The CR7 Diet Plan (Sample Daily Menu):</h4>
+      <ul>
+        <li><strong>Breakfast (6:00 AM):</strong> 6 whole boiled eggs, a bowl of whole-grain cereal, two slices of toast with avocado, a glass of freshly squeezed orange juice, and a protein-rich smoothie (banana, whey protein, and oats).</li>
+        <li><strong>Lunch (12:00 PM):</strong> 250g of grilled chicken breast or pan-seared salmon, served with a large portion of brown rice and steamed broccoli. He always includes a green side salad with olive oil.</li>
+        <li><strong>Dinner (8:00 PM):</strong> Fresh cod or sea bass, often grilled or baked with a drizzle of lemon. He serves this with sweet potatoes and a mix of sautéed vegetables (zucchini, bell peppers, and spinach).</li>
+        <li><strong>Snacks (In-between meals):</strong> A handful of mixed nuts (almonds and walnuts), fresh berries (blueberries, strawberries), and high-quality protein shakes to keep his energy levels high.</li>
+      </ul>
+      <p style="margin-top:10px;">He completely eliminates sugary beverages, processed junk food, and alcohol from his daily intake. Instead, he drinks at least <span class="highlight">2.5 to 3 liters of plain water</span> every day to keep his body hydrated and cleansed. This diet is the primary reason he remains injury-free and incredibly agile on the pitch.</p>
+    </div>
+
+    <!-- 5. Detailed Fitness & Workout Routine -->
+    <div class="duo-card lifestyle-card">
+      <h3>💪 5-Hour Daily Fitness Routine & Recovery</h3>
+      <p>To maintain his chiseled physique, Ronaldo dedicates nearly <span class="highlight">5 hours a day</span> to fitness and recovery, even on rest days.</p>
+      <ul>
+        <li><strong>High-Intensity Interval Training (HIIT):</strong> He frequently uses sprint intervals and cycling sessions to boost his cardiovascular endurance and explosive speed.</li>
+        <li><strong>Olympic Weightlifting:</strong> Ronaldo focuses on compound lifts like squats, deadlifts, and clean-and-jerks. This builds raw muscle power, allowing him to jump higher and hold off defenders.</li>
+        <li><strong>Core and Agility:</strong> Planks, hanging leg raises, and resistance band drills keep his core tight, giving him the incredible balance he is famous for.</li>
+        <li><strong>Recovery is Key:</strong> After every heavy session, he spends 30 minutes on ice baths (cryotherapy) to reduce muscle inflammation. He also does daily yoga and assisted stretching to maintain his full range of motion.</li>
+        <li><strong>Sleep Protocol:</strong> Ronaldo believes that sleep is the ultimate recovery tool. He ensures he gets between <span class="highlight">8 to 9 hours of high-quality sleep</span> every single night, taking power naps during the day if his travel schedule allows.</li>
+      </ul>
     </div>
 
     <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
