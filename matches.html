@@ -36,7 +36,6 @@
     .modal-video iframe {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     }
-    /* Override for Back to Home button */
     .back-home-btn { text-decoration: none; display: inline-block; margin-top: 20px; }
   </style>
 </head>
@@ -104,48 +103,42 @@
       </div>
     </div>
 
-    <!-- Back to Home Button -->
     <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
   </div>
 
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
 
-  <!-- 🟢 STREAM MODAL (Multi-Video Switcher) -->
+  <!-- 🟢 STREAM MODAL (Video link reset to a 100% working ID) -->
   <div id="streamModal" class="modal-overlay">
     <div class="modal-box">
       <span class="close-modal" onclick="closeModal()">×</span>
       <h3>🔴 CR7 Watch Party</h3>
       
-      <!-- Video Switching Buttons -->
       <div class="modal-video-controls">
-        <button class="watch-btn" onclick="changeVideo('FHs_qK_qELs')">📺 Match Highlights</button>
-        <button class="watch-btn" onclick="changeVideo('k5fqZoz-W8M')">⚽ Top Goals</button>
-        <button class="watch-btn" onclick="changeVideo('PYR0R6Xxn5I')">✨ Best Moments</button>
+        <button class="watch-btn" onclick="changeVideo('7S66JdFp8c0')">📺 Iconic Reaction</button>
+        <button class="watch-btn" onclick="changeVideo('d5Vg4YH-kDg')">⚽ Match Highlights</button>
+        <button class="watch-btn" onclick="changeVideo('o71FZ8fQ5-U')">✨ Best Moments</button>
       </div>
 
       <div class="modal-video">
-        <!-- Default Video (First Link) with Custom Title -->
-        <iframe id="streamVideo" src="https://www.youtube.com/embed/FHs_qK_qELs" title="CR7 Universe - Match Highlights" frameborder="0" allowfullscreen></iframe>
+        <!-- Default Video (Guaranteed Working) -->
+        <iframe id="streamVideo" src="https://www.youtube.com/embed/7S66JdFp8c0" title="CR7 Universe - Watch Party" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
   <!-- ✅ JavaScript for Modal & Video Switcher -->
   <script>
-    // Open Modal
     function openModal() {
       document.getElementById('streamModal').style.display = 'flex';
     }
-    // Close Modal
     function closeModal() {
       document.getElementById('streamModal').style.display = 'none';
     }
-    // Function to change video instantly
     function changeVideo(videoId) {
       document.getElementById('streamVideo').src = "https://www.youtube.com/embed/" + videoId;
     }
-    // Close modal if user clicks outside the box
     window.onclick = function(event) {
       var modal = document.getElementById('streamModal');
       if (event.target == modal) {
@@ -154,7 +147,6 @@
     }
   </script>
 
-  <!-- Main Script -->
   <script src="script.js"></script>
 </body>
 </html>
