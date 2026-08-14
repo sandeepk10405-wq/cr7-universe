@@ -53,7 +53,6 @@
   </nav>
 
   <div class="container">
-    <!-- Countdown Timer -->
     <div class="countdown-container">
       <div class="countdown-box"><span class="countdown-number" id="days">00</span><span class="countdown-label">Days</span></div>
       <div class="countdown-box"><span class="countdown-number" id="hours">00</span><span class="countdown-label">Hours</span></div>
@@ -109,26 +108,26 @@
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
 
-  <!-- 🟢 STREAM MODAL (Video link reset to a 100% working ID) -->
+  <!-- 🟢 STREAM MODAL (Using your 3 provided video IDs) -->
   <div id="streamModal" class="modal-overlay">
     <div class="modal-box">
       <span class="close-modal" onclick="closeModal()">×</span>
       <h3>🔴 CR7 Watch Party</h3>
       
       <div class="modal-video-controls">
-        <button class="watch-btn" onclick="changeVideo('7S66JdFp8c0')">📺 Iconic Reaction</button>
-        <button class="watch-btn" onclick="changeVideo('d5Vg4YH-kDg')">⚽ Match Highlights</button>
-        <button class="watch-btn" onclick="changeVideo('o71FZ8fQ5-U')">✨ Best Moments</button>
+        <!-- Ab aapke diye hue 3 links yahan use kiye gaye hain -->
+        <button class="watch-btn" onclick="changeVideo('FHs_qK_qELs')">📺 Match Highlights</button>
+        <button class="watch-btn" onclick="changeVideo('k5fqZoz-W8M')">⚽ Top Goals</button>
+        <button class="watch-btn" onclick="changeVideo('PYR0R6Xxn5I')">✨ Best Moments</button>
       </div>
 
       <div class="modal-video">
-        <!-- Default Video (Guaranteed Working) -->
-        <iframe id="streamVideo" src="https://www.youtube.com/embed/7S66JdFp8c0" title="CR7 Universe - Watch Party" frameborder="0" allowfullscreen></iframe>
+        <!-- Default Video -->
+        <iframe id="streamVideo" src="https://www.youtube.com/embed/FHs_qK_qELs" title="CR7 Universe - Watch Party" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
-  <!-- ✅ JavaScript for Modal & Video Switcher -->
   <script>
     function openModal() {
       document.getElementById('streamModal').style.display = 'flex';
