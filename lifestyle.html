@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lifestyle - CR7 Universe</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .lifestyle-card { margin-bottom: 20px; }
+    .lifestyle-card h3 { color: #f5c518; margin-bottom: 5px; }
+    .lifestyle-card p { color: #ddd; line-height: 1.8; font-size: 15px; }
+    .lifestyle-card ul { color: #ddd; line-height: 1.8; font-size: 15px; padding-left: 20px; }
+    .lifestyle-card ul li { margin-bottom: 8px; }
+    .back-home-btn { text-decoration: none; display: inline-block; margin-top: 20px; }
+    .highlight { color: #f5c518; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">⚽ CR7</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="lifestyle.html" style="color:#f5c518;">Lifestyle</a>
+      <a href="matches.html">Matches</a>
+      <a href="stats.html">Stats</a>
+      <a href="fanzone.html">Fan Zone</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 class="section-title">👔 CR7 Lifestyle, Diet & Fitness</h2>
+    <p style="color:#aaa; text-align: center; margin-bottom: 25px;">Discover the habits, training, and luxury that keep Cristiano Ronaldo at the top of the world.</p>
+
+    <!-- 1. Fashion & Cars -->
+    <div class="duo-card lifestyle-card">
+      <h3>Fashion & Luxury: The CR7 Brand</h3>
+      <p>Cristiano Ronaldo is not just a footballer; he is a <span class="highlight">global fashion icon</span>. He launched his own clothing line, <span class="highlight">CR7 Brand</span>, which includes premium footwear, stylish underwear, and a signature fragrance collection. His style reflects confidence and success.</p>
+      <p>His car collection is one of the most impressive in the world, featuring over <span class="highlight">50 luxury vehicles</span> including a <span class="highlight">Bugatti Chiron</span>, a <span class="highlight">Lamborghini Aventador</span>, and a custom <span class="highlight">Rolls-Royce Cullinan</span>. The collection is worth over $50 million.</p>
+      <p>He also owns a customized <span class="highlight">Gulfstream G200 private jet</span> to travel across the globe for matches and business deals.</p>
+    </div>
+
+    <!-- 2. Daily Diet Plan -->
+    <div class="duo-card lifestyle-card">
+      <h3>🥗 The CR7 Diet Plan</h3>
+      <p>Ronaldo’s diet is a key part of his success. He follows a strict, high-protein, and low-sugar diet to maintain peak physical condition.</p>
+      <ul>
+        <li><strong>Breakfast:</strong> Whole-grain cereal, eggs, avocado, and fresh fruit.</li>
+        <li><strong>Lunch:</strong> Grilled chicken breast with brown rice, steamed broccoli, and a side salad.</li>
+        <li><strong>Dinner:</strong> Fresh fish (like cod or salmon) with vegetables and sweet potatoes.</li>
+        <li><strong>Snacks:</strong> Nuts, protein shakes, and fresh fruits like bananas or berries.</li>
+      </ul>
+      <p style="margin-top:10px;">He completely avoids sugary drinks, processed foods, and alcohol, drinking at least <span class="highlight">2-3 liters of water</span> daily.</p>
+    </div>
+
+    <!-- 3. Workout & Fitness Routine -->
+    <div class="duo-card lifestyle-card">
+      <h3>💪 Workout & Fitness Routine</h3>
+      <p>Ronaldo trains <span class="highlight">5 hours a day</span> to stay in incredible shape.</p>
+      <ul>
+        <li><strong>Cardio:</strong> Sprint intervals, cycling, and treadmill sessions to boost stamina.</li>
+        <li><strong>Strength Training:</strong> Weightlifting, squats, and lunges to build muscle power.</li>
+        <li><strong>Core Workouts:</strong> Planks and crunches for a strong midsection.</li>
+        <li><strong>Recovery:</strong> Daily stretching, yoga, and ice baths to prevent injuries.</li>
+      </ul>
+      <p style="margin-top:10px;">He also gets at least <span class="highlight">8 hours of sleep</span> every night to allow his body to recover fully.</p>
+    </div>
+
+    <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
+  </div>
+
+  <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
+  <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
+
+  <script>
+    // Back to Top Button Logic
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
