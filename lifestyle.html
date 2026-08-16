@@ -9,58 +9,23 @@
   <style>
     .lifestyle-card { margin-bottom: 25px; }
     .lifestyle-card h3 { color: #f5c518; margin-bottom: 5px; font-size: 20px; }
-    .lifestyle-card p { color: #ddd; line-height: 1.8; font-size: 15px; margin-bottom: 10px; text-align: justify; }
-    .lifestyle-card ul { color: #ddd; line-height: 1.8; font-size: 15px; padding-left: 20px; }
-    .lifestyle-card ul li { margin-bottom: 8px; }
+    .lifestyle-card p { color: #ddd; line-height: 1.8; font-size: 15px; margin-bottom: 10px; }
+    .lifestyle-img { width: 100%; height: auto; max-height: 600px; object-fit: contain; border-radius: 12px; margin-bottom: 15px; border: 1px solid #2a2a2a; }
     
-    .highlight { color: #f5c518; font-weight: bold; }
+    /* ✅ FIXED: Gallery images - No cropping on mobile */
+    .workout-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
+    .workout-gallery img { 
+      width: 100%; height: auto; min-height: 150px; max-height: 300px; 
+      object-fit: contain; border-radius: 10px; border: 1px solid #2a2a2a; transition: transform 0.3s ease; 
+    }
+    .workout-gallery img:hover { transform: scale(1.05); border-color: #f5c518; }
     
-    /* Single Image Styling */
-    .lifestyle-img {
-      width: 100%;
-      height: auto;
-      max-height: 600px;
-      object-fit: contain;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #2a2a2a;
-      background: #0a0a0a;
-    }
-
-    /* 16 Ronaldo Gym Photos Gallery (Fixed Links) */
-    .workout-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
-    }
-    .workout-gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 1px solid #2a2a2a;
-      transition: transform 0.3s ease;
-    }
-    .workout-gallery img:hover {
-      transform: scale(1.05);
-      border-color: #f5c518;
-    }
-
-    /* Video Embed Style */
-    .video-wrapper {
-      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-      border-radius: 10px; margin: 20px 0; border: 1px solid #f5c518;
-    }
-    .video-wrapper iframe {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    }
-
+    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin: 20px 0; border: 1px solid #f5c518; }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .back-home-btn { text-decoration: none; display: inline-block; margin-top: 20px; }
   </style>
 </head>
 <body>
-
   <nav class="navbar">
     <div class="logo">⚽ CR7</div>
     <div class="nav-links">
@@ -74,95 +39,54 @@
 
   <div class="container">
     <h2 class="section-title">👔 CR7 Lifestyle, Diet & Fitness</h2>
-    <p style="color:#aaa; text-align: center; margin-bottom: 25px;">Explore the secrets behind the world's greatest athlete: his luxurious brand, his multi-million dollar garage, his scientific diet, and his intense workout routine.</p>
 
-    <!-- 1. Fashion & The CR7 Brand -->
+    <!-- 1. Fashion (✅ Exact Name: Ronaldo fashion.jpg) -->
     <div class="duo-card lifestyle-card">
       <h3>👕 The CR7 Empire: Fashion, Fragrance & Footwear</h3>
-      <img class="lifestyle-img" src="https://www.cristianoronaldo.com/assets/images/brand_ursu.jpg?t=2067825244" alt="CR7 Style and Fashion">
-      <p>Cristiano Ronaldo is much more than a footballer; he has built a <span class="highlight">multi-million dollar global lifestyle brand</span>. The <span class="highlight">CR7 Brand</span> is a statement of style, confidence, and boldness. It isn't just limited to football boots; it encompasses a full lifestyle collection.</p>
-      <ul>
-        <li><strong>Premium Denim & Streetwear:</strong> Ronaldo designs stylish jeans, hoodies, and jackets that reflect his modern, urban fashion sense.</li>
-        <li><strong>Signature Fragrances:</strong> From "CR7" to "Legacy," his cologne line is one of the best-selling celebrity fragrances in Europe, known for its woody and spicy notes.</li>
-        <li><strong>Footwear & Underwear:</strong> His CR7 collection includes high-performance sneakers for everyday wear and a premium line of boxers and briefs, designed for both comfort and athletic aesthetic.</li>
-      </ul>
+      <img class="lifestyle-img" src="images/Ronaldo fashion.jpg" alt="CR7 Style and Fashion">
+      <p>CR7 Brand is a statement of style, confidence, and boldness.</p>
     </div>
 
-    <!-- 2. Cars Collection ($50 Million+) -->
+    <!-- 2. Cars (✅ Exact Names: Ronaldo BMW.jpg & Ronaldo bugatti.jpg) -->
     <div class="duo-card lifestyle-card">
       <h3>🏎️ The $50 Million Garage: Ronaldo's Car Collection</h3>
-      <img class="lifestyle-img" src="https://img.allfootballapp.com/www/M00/21/B0/720x-/-/-/CgAGVWFsYSSARM-IAAI-Q29DLC8816.jpg" alt="Bugatti Chiron Ronaldo Car">
-      <p>Step into the private garage of Cristiano Ronaldo, and you will find what many consider a museum of automotive engineering. His collection is not just about speed; it is about exclusivity and rarity. Here are the crown jewels of his <span class="highlight">$50 million fleet</span>:</p>
-      <ul>
-        <li><strong>Bugatti Chiron (Limited Edition):</strong> Valued at over $3 million. <span class="highlight">Only 500 units exist in the entire world.</span> Ronaldo’s Chiron is a masterpiece of hypercar engineering, capable of hitting over 400 km/h.</li>
-        <li><strong>Lamborghini Aventador:</strong> A bold and aggressive V12 monster. Ronaldo owns a custom matte-black Aventador, which is a rare sight on the roads even among millionaires.</li>
-        <li><strong>Rolls-Royce Cullinan:</strong> Often called the "Rolls-Royce of SUVs," this luxury vehicle costs around $400,000. It features bulletproof glass and a fully customized interior designed specifically for his family travels.</li>
-        <li><strong>Ferrari F12 TdF:</strong> One of the fastest Ferraris ever built, named after the famous Tour de France race. This car is incredibly rare, with fewer than 800 made worldwide.</li>
-        <li><strong>McLaren Senna:</strong> Named after the legendary F1 driver Ayrton Senna, this track-focused hypercar is worth over $1 million and is highly sought after by collectors globally.</li>
-      </ul>
+      <img class="lifestyle-img" src="images/Ronaldo BMW.jpg" alt="Ronaldo BMW XM">
+      <img class="lifestyle-img" src="images/Ronaldo bugatti.jpg" alt="Ronaldo Bugatti">
     </div>
 
-    <!-- 3. Private Jet -->
+    <!-- 3. Private Jet (✅ Exact Names: Ronaldo jet-out.jpg & Ronaldo jet-in.jpg) -->
     <div class="duo-card lifestyle-card">
-      <h3>✈️ The Private Jet: Ronaldo's Luxury Travel</h3>
-      <img class="lifestyle-img" src="https://supercarblondie.com/wp-content/uploads/Cristiano-Ronaldo-owns-one-of-the-most-stunning-private-jets-ever-made-a-Bombardier-Global-Express-XRS-customized-for-him-1.webp" alt="Bombardier Global Express XRS Interior">
-      <p>To maintain his brutal schedule across continents, Ronaldo relies on his highly customized <span class="highlight">Bombardier Global Express XRS private jet</span>.</p>
-      <ul>
-        <li><strong>Price Tag:</strong> A brand new Bombardier Global Express XRS costs roughly <span class="highlight">$40 to $45 million</span>.</li>
-        <li><strong>Customized Features:</strong> It features a built-in mini-gym, private bedroom suite, and large leather reclining seats.</li>
-      </ul>
+      <h3>✈️ Ronaldo's Private Jet</h3>
+      <img class="lifestyle-img" src="images/Ronaldo jet-out.jpg" alt="Ronaldo Private Jet Exterior">
+      <img class="lifestyle-img" src="images/Ronaldo jet-in.jpg" alt="Inside Ronaldo Private Jet">
     </div>
 
-    <!-- 4. The Famous Water & Diet Incident -->
+    <!-- 4. Diet & Family (✅ Exact Name: Ronaldo healthy dinner.jpg) -->
     <div class="duo-card lifestyle-card">
       <h3>🥤 The "Coca-Cola" Incident & His Scientific Diet</h3>
-      <p>One of the most viral moments of Ronaldo's career wasn't a goal—it was a press conference before a Euro 2020 match where he moved two Coca-Cola bottles aside and held up a water bottle, saying, <span class="highlight">"Drink water, not Coca-Cola."</span></p>
-      
       <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/_nw7FOgOgtA" title="Ronaldo Coca-Cola Water Incident" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/_nw7FOgOgtA" allowfullscreen></iframe>
       </div>
-
-      <p>His diet is the foundation of his longevity. He follows a strict <span class="highlight">high-protein, low-sugar, and low-carb</span> diet plan.</p>
-      
-      <img class="lifestyle-img" style="max-height: 250px;" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800" alt="CR7 Healthy Diet Plan">
-      
-      <h4 style="color:#f5c518; margin-top:10px;">🥗 The CR7 Diet Plan:</h4>
-      <ul>
-        <li><strong>Breakfast:</strong> Eggs, whole-grain cereal, toast with avocado, orange juice.</li>
-        <li><strong>Lunch:</strong> Grilled chicken or salmon, brown rice, steamed broccoli.</li>
-        <li><strong>Dinner:</strong> Fresh cod or sea bass with sweet potatoes.</li>
-        <li><strong>Snacks:</strong> Mixed nuts, fresh berries, protein shakes.</li>
-      </ul>
+      <img class="lifestyle-img" style="max-height: 250px;" src="images/Ronaldo healthy dinner.jpg" alt="CR7 Family Dinner and Healthy Diet Plan">
     </div>
 
-    <!-- 5. Fitness & Workout Routine (✅ All 16 Images are now 100% Working Ronaldo Photos) -->
+    <!-- 5. Gym Gallery (✅ Exact Names: gym1.jpg to gym24.jpg) -->
     <div class="duo-card lifestyle-card">
       <h3>💪 5-Hour Daily Fitness Routine</h3>
       <div class="workout-gallery">
-        https://share.google/Z8xbHSeQZBqAwhI7F
+        <img src="images/gym1.jpg" alt="CR7 Gym"><img src="images/gym2.jpg" alt="CR7 Gym"><img src="images/gym3.jpg" alt="CR7 Gym"><img src="images/gym4.jpg" alt="CR7 Gym">
+        <img src="images/gym5.jpg" alt="CR7 Gym"><img src="images/gym6.jpg" alt="CR7 Gym"><img src="images/gym7.jpg" alt="CR7 Gym"><img src="images/gym8.jpg" alt="CR7 Gym">
+        <img src="images/gym9.jpg" alt="CR7 Gym"><img src="images/gym10.jpg" alt="CR7 Gym"><img src="images/gym11.jpg" alt="CR7 Gym"><img src="images/gym12.jpg" alt="CR7 Gym">
+        <img src="images/gym13.jpg" alt="CR7 Gym"><img src="images/gym14.jpg" alt="CR7 Gym"><img src="images/gym15.jpg" alt="CR7 Gym"><img src="images/gym16.jpg" alt="CR7 Gym">
+        <img src="images/gym17.jpg" alt="CR7 Gym"><img src="images/gym18.jpg" alt="CR7 Gym"><img src="images/gym19.jpg" alt="CR7 Gym"><img src="images/gym20.jpg" alt="CR7 Gym">
+        <img src="images/gym21.jpg" alt="CR7 Gym"><img src="images/gym22.jpg" alt="CR7 Gym"><img src="images/gym23.jpg" alt="CR7 Gym"><img src="images/gym24.jpg" alt="CR7 Gym">
       </div>
     </div>
 
     <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
   </div>
-
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
-
-  <script>
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    window.onscroll = function() {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        scrollBtn.style.display = "block";
-      } else {
-        scrollBtn.style.display = "none";
-      }
-    };
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
-
   <script src="script.js"></script>
 </body>
 </html>
