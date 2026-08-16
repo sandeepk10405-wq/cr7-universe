@@ -3,141 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CR7 Universe</title>
+  <title>Lifestyle, Diet & Fitness - CR7 Universe</title>
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .lifestyle-card { margin-bottom: 25px; }
+    .lifestyle-card h3 { color: #f5c518; margin-bottom: 5px; font-size: 20px; }
+    .lifestyle-card p { color: #ddd; line-height: 1.8; font-size: 15px; margin-bottom: 10px; }
+    .lifestyle-img { width: 100%; height: auto; max-height: 600px; object-fit: contain; border-radius: 12px; margin-bottom: 15px; border: 1px solid #2a2a2a; }
+    .workout-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
+    .workout-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 1px solid #2a2a2a; }
+    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin: 20px 0; border: 1px solid #f5c518; }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .back-home-btn { text-decoration: none; display: inline-block; margin-top: 20px; }
+  </style>
 </head>
 <body>
-
   <nav class="navbar">
     <div class="logo">⚽ CR7</div>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="lifestyle.html">Lifestyle</a>
+      <a href="lifestyle.html" style="color:#f5c518;">Lifestyle</a>
       <a href="matches.html">Matches</a>
       <a href="stats.html">Stats</a>
       <a href="fanzone.html">Fan Zone</a>
     </div>
   </nav>
 
-  <div id="main-content">
-    <!-- Hero Section -->
-    <div id="home" class="hero">
-      <h1>SIUUU! <br> Welcome to <span style="color:#f5c518;">CR7 Universe</span></h1>
-      <p>Official fan hub of the greatest footballer in the world.<br>Get everything here - matches, lifestyle, and exclusive fan moments.</p>
-      <p style="color:#aaa; font-style:italic; margin-top:10px;">"I am not a perfectionist, but I like to feel that things are done well." – CR7</p>
+  <div class="container">
+    <h2 class="section-title">👔 CR7 Lifestyle, Diet & Fitness</h2>
+
+    <!-- 1. Fashion -->
+    <div class="duo-card lifestyle-card">
+      <h3>👕 The CR7 Empire: Fashion, Fragrance & Footwear</h3>
+      <img class="lifestyle-img" src="images/fashion.jpg" alt="CR7 Style and Fashion">
+      <p>CR7 Brand is a statement of style, confidence, and boldness.</p>
     </div>
 
-    <div class="container">
-      
-      <!-- Lifestyle Section -->
-      <div id="lifestyle" style="margin-top: 50px; padding-top: 20px;">
-        <h2 class="section-title">👔 CR7 Lifestyle</h2>
-        <div class="duo-card clickable-card" onclick="toggleInfo('lifestyle-info')">
-          <h3>Fashion, Luxury & Cars</h3>
-          <p style="color:#aaa;">Tap to explore the luxurious world of CR7's cars, fashion brands, and his multi-million dollar lifestyle.</p>
-          <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">Tap to Read More</span>
-        </div>
-        <div id="lifestyle-info" class="info-panel" style="display: none;">
-          <h3 style="color:#f5c518;">Living Like a Legend</h3>
-          <p><b>The CR7 Empire:</b> Footwear, premium fragrances, and stylish underwear.</p>
-          <p><b>Car Collection:</b> 50+ vehicles including Bugatti Chiron, Lamborghini Aventador, worth over $50 million.</p>
-          <p><b>Net Worth:</b> Exceeds <b>$600 million</b>.</p>
-          <button class="watch-btn" onclick="toggleInfo('lifestyle-info')" style="margin-top:10px;">Close</button>
-        </div>
+    <!-- 2. Cars -->
+    <div class="duo-card lifestyle-card">
+      <h3>🏎️ The $50 Million Garage: Ronaldo's Car Collection</h3>
+      <img class="lifestyle-img" src="images/bmw.jpg" alt="Ronaldo BMW XM">
+      <img class="lifestyle-img" src="images/bugatti.jpg" alt="Ronaldo Bugatti">
+    </div>
+
+    <!-- 3. Private Jet -->
+    <div class="duo-card lifestyle-card">
+      <h3>✈️ Ronaldo's Private Jet</h3>
+      <img class="lifestyle-img" src="images/jet-out.jpg" alt="Ronaldo Private Jet Exterior">
+      <img class="lifestyle-img" src="images/jet-in.jpg" alt="Inside Ronaldo Private Jet">
+    </div>
+
+    <!-- 4. Diet & Family -->
+    <div class="duo-card lifestyle-card">
+      <h3>🥤 The "Coca-Cola" Incident & His Scientific Diet</h3>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/_nw7FOgOgtA" allowfullscreen></iframe>
       </div>
+      <img class="lifestyle-img" style="max-height: 250px;" src="images/dinner.jpg" alt="CR7 Family Dinner and Healthy Diet Plan">
+    </div>
 
-      <!-- Stats Section -->
-      <div id="stats" style="margin-top: 50px; padding-top: 20px;">
-        <h2 class="section-title">📊 CR7 Stats</h2>
-        <div class="duo-card clickable-card" onclick="toggleInfo('stats-info')">
-          <h3>Career Records</h3>
-          <p style="color:#aaa;">Tap to dive deep into the incredible numbers behind the living legend's career.</p>
-          <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">Tap to Read More</span>
-        </div>
-        <div id="stats-info" class="info-panel" style="display: none;">
-          <h3 style="color:#f5c518;">The GOAT's Numbers</h3>
-          <p><b>900+ Career Goals</b> - The greatest goalscorer in history.</p>
-          <p><b>5 Ballon d'Ors</b> (2008, 2013, 2014, 2016, 2017).</p>
-          <p><b>5 UCL Titles</b> - All-time top scorer in Champions League.</p>
-          <button class="watch-btn" onclick="toggleInfo('stats-info')" style="margin-top:10px;">Close</button>
-        </div>
-      </div>
-
-      <!-- Fan Zone Section -->
-      <div id="fanzone" style="margin-top: 50px; padding-top: 20px;">
-        <h2 class="section-title">💛 CR7 Fan Zone</h2>
-        <div class="duo-card clickable-card" onclick="toggleInfo('fanzone-info')">
-          <h3>Join the Army</h3>
-          <p style="color:#aaa;">Tap to learn how you can be part of the global CR7 Army and get exclusive fan content.</p>
-          <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">Tap to Read More</span>
-        </div>
-        <div id="fanzone-info" class="info-panel" style="display: none;">
-          <h3 style="color:#f5c518;">Welcome to the Global CR7 Army</h3>
-          <p>Stay updated with match schedules, transfer rumors, and exclusive content.</p>
-          <button class="watch-btn" onclick="toggleInfo('fanzone-info')" style="margin-top:10px;">Close</button>
-        </div>
-        
-        <div style="margin-top: 15px;">
-          <a href="https://www.instagram.com/cristiano/" target="_blank" class="ambassador-link">📸 Follow CR7 on Instagram</a>
-        </div>
-      </div>
-
-      <!-- Fan Ambassadors (iShowSpeed & Georgina - Both added) -->
-      <h2 class="section-title">🌟 Fan Ambassadors</h2>
-      <div class="fixtures-grid">
-        <div class="duo-card">
-          <div class="ambassador-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IShowSpeed_at_ESPN_2024.jpg/800px-IShowSpeed_at_ESPN_2024.jpg" alt="iShowSpeed">
-            <h3 style="margin:0; color:#f5c518; display:flex; align-items:center;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" style="width:18px; height:18px; margin-right:6px;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_Logo_%282013-2017%29.svg/2560px-YouTube_Logo_%282013-2017%29.svg.png" style="width:20px; height:15px; margin-right:6px;">
-              iShowSpeed
-            </h3>
-          </div>
-          <p style="color:#aaa; margin-top: 10px;">Watch the iconic first meeting of Speed and CR7 right here!</p>
-          <div class="video-container" style="margin: 15px 0; border-radius: 10px; overflow: hidden; position: relative; padding-bottom: 177.77%; height: 0;">
-              <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Uv1PyE8J38w" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#SpeedXCR7</span>
-          <div style="margin-top: 12px;">
-            <a href="https://www.youtube.com/@IShowSpeed" target="_blank" class="ambassador-link">▶ YouTube</a>
-            <a href="https://www.instagram.com/ishowspeed/" target="_blank" class="ambassador-link">📸 Instagram</a>
-          </div>
-        </div>
-
-        <!-- ✅ यहाँ Georgina का कार्ड जोड़ दिया गया है -->
-        <div class="duo-card">
-          <div class="ambassador-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Georgina_Rodr%C3%ADguez_2023.jpg/800px-Georgina_Rodr%C3%ADguez_2023.jpg" alt="Georgina Rodriguez">
-            <h3 style="margin:0; color:#f5c518; display:flex; align-items:center;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" style="width:18px; height:18px; margin-right:6px;">
-              Georgina Rodriguez (Fiona)
-            </h3>
-          </div>
-          <p style="color:#aaa; margin-top: 10px;">Ronaldo's better half and fashion icon. Her style evolution, family moments, and exclusive section for CR7 brand outfits.</p>
-          <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#GioStyle</span>
-          <div style="margin-top: 12px;">
-            <a href="https://www.instagram.com/georginagio/" target="_blank" class="ambassador-link">📸 Follow on Instagram</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Shoutbox -->
-      <h2 class="section-title">💬 CR7 Fan Shoutbox</h2>
-      <div class="shoutbox-container">
-        <div class="shoutbox-form">
-          <input type="text" id="shoutName" placeholder="Your name (e.g., CR7 Fan)">
-          <input type="text" id="shoutMsg" placeholder="Write your message for CR7...">
-          <button id="shoutBtn" class="attend-btn">Send 💬</button>
-        </div>
-        <div id="shoutboxMessages" class="shoutbox-messages"></div>
+    <!-- 5. Gym Gallery (24 Photos) -->
+    <div class="duo-card lifestyle-card">
+      <h3>💪 5-Hour Daily Fitness Routine</h3>
+      <div class="workout-gallery">
+        <img src="images/gym1.jpg" alt="CR7 Gym"><img src="images/gym2.jpg" alt="CR7 Gym"><img src="images/gym3.jpg" alt="CR7 Gym"><img src="images/gym4.jpg" alt="CR7 Gym">
+        <img src="images/gym5.jpg" alt="CR7 Gym"><img src="images/gym6.jpg" alt="CR7 Gym"><img src="images/gym7.jpg" alt="CR7 Gym"><img src="images/gym8.jpg" alt="CR7 Gym">
+        <img src="images/gym9.jpg" alt="CR7 Gym"><img src="images/gym10.jpg" alt="CR7 Gym"><img src="images/gym11.jpg" alt="CR7 Gym"><img src="images/gym12.jpg" alt="CR7 Gym">
+        <img src="images/gym13.jpg" alt="CR7 Gym"><img src="images/gym14.jpg" alt="CR7 Gym"><img src="images/gym15.jpg" alt="CR7 Gym"><img src="images/gym16.jpg" alt="CR7 Gym">
+        <img src="images/gym17.jpg" alt="CR7 Gym"><img src="images/gym18.jpg" alt="CR7 Gym"><img src="images/gym19.jpg" alt="CR7 Gym"><img src="images/gym20.jpg" alt="CR7 Gym">
+        <img src="images/gym21.jpg" alt="CR7 Gym"><img src="images/gym22.jpg" alt="CR7 Gym"><img src="images/gym23.jpg" alt="CR7 Gym"><img src="images/gym24.jpg" alt="CR7 Gym">
       </div>
     </div>
+
+    <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
   </div>
-
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
-  
   <script src="script.js"></script>
 </body>
 </html>
