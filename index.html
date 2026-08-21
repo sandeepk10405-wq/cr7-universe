@@ -10,16 +10,13 @@
     .lifestyle-card { margin-bottom: 25px; }
     .lifestyle-card h3 { color: #f5c518; margin-bottom: 5px; font-size: 20px; }
     .lifestyle-card p { color: #ddd; line-height: 1.8; font-size: 15px; margin-bottom: 10px; }
-    .lifestyle-img { width: 100%; height: auto; max-height: 600px; object-fit: contain; border-radius: 12px; margin-bottom: 15px; border: 1px solid #2a2a2a; }
-    
-    /* ✅ FIXED: Gallery images - No cropping on mobile & laptop */
+    .lifestyle-img { width: 100%; height: auto; max-height: 600px; object-fit: contain; border-radius: 12px; margin-bottom: 15px; border: 1px solid #2a2a2a; background: #111; }
     .workout-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
     .workout-gallery img { 
       width: 100%; height: auto; min-height: 150px; max-height: 300px; 
-      object-fit: contain; border-radius: 10px; border: 1px solid #2a2a2a; transition: transform 0.3s ease; 
+      object-fit: contain; border-radius: 10px; border: 1px solid #2a2a2a; transition: transform 0.3s ease; background: #111;
     }
     .workout-gallery img:hover { transform: scale(1.05); border-color: #f5c518; }
-    
     .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin: 20px 0; border: 1px solid #f5c518; }
     .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .back-home-btn { text-decoration: none; display: inline-block; margin-top: 20px; }
@@ -40,46 +37,47 @@
   <div class="container">
     <h2 class="section-title">👔 CR7 Lifestyle, Diet & Fitness</h2>
 
-    <!-- 1. Fashion -->
+    <!-- 1. FASHION -->
     <div class="duo-card lifestyle-card">
       <h3>👕 The CR7 Empire: Fashion, Fragrance & Footwear</h3>
-      <img class="lifestyle-img" src="images/fashion.jpg" alt="CR7 Style and Fashion">
+      <!-- 🔥 FIX: /Images/ use kiya hai -->
+      <img class="lifestyle-img" src="/Images/Ronaldo-fashion.jpg" alt="CR7 Style and Fashion">
       <p>CR7 Brand is a statement of style, confidence, and boldness.</p>
     </div>
 
-    <!-- 2. Cars -->
+    <!-- 2. CARS -->
     <div class="duo-card lifestyle-card">
       <h3>🏎️ The $50 Million Garage: Ronaldo's Car Collection</h3>
-      <img class="lifestyle-img" src="images/bmw.jpg" alt="Ronaldo BMW XM">
-      <img class="lifestyle-img" src="images/bugatti.jpg" alt="Ronaldo Bugatti">
+      <img class="lifestyle-img" src="/Images/Ronaldo-BMW.jpg" alt="Ronaldo BMW XM">
+      <img class="lifestyle-img" src="/Images/Ronaldo-bugatti.jpg" alt="Ronaldo Bugatti">
     </div>
 
-    <!-- 3. Private Jet -->
+    <!-- 3. PRIVATE JET -->
     <div class="duo-card lifestyle-card">
       <h3>✈️ Ronaldo's Private Jet</h3>
-      <img class="lifestyle-img" src="images/jet-out.jpg" alt="Ronaldo Private Jet Exterior">
-      <img class="lifestyle-img" src="images/jet-in.jpg" alt="Inside Ronaldo Private Jet">
+      <img class="lifestyle-img" src="/Images/Ronaldo-jet-in.jpg" alt="Inside Ronaldo Private Jet">
+      <!-- Note: Agar bahar wali photo upload karni hai toh file name 'Ronaldo-jet-out.jpg' rakhna -->
     </div>
 
-    <!-- 4. Diet & Family -->
+    <!-- 4. DIET -->
     <div class="duo-card lifestyle-card">
       <h3>🥤 The "Coca-Cola" Incident & His Scientific Diet</h3>
       <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/_nw7FOgOgtA" allowfullscreen></iframe>
       </div>
-      <img class="lifestyle-img" style="max-height: 250px;" src="images/dinner.jpg" alt="CR7 Family Dinner and Healthy Diet Plan">
+      <img class="lifestyle-img" style="max-height: 250px;" src="/Images/Ronaldo-healthy-dinner.jpg" alt="CR7 Family Dinner and Healthy Diet Plan">
     </div>
 
-    <!-- 5. Gym Gallery (24 Photos) -->
+    <!-- 5. GYM (24 Photos) -->
     <div class="duo-card lifestyle-card">
       <h3>💪 5-Hour Daily Fitness Routine</h3>
       <div class="workout-gallery">
-        <img src="images/gym1.jpg" alt="CR7 Gym"><img src="images/gym2.jpg" alt="CR7 Gym"><img src="images/gym3.jpg" alt="CR7 Gym"><img src="images/gym4.jpg" alt="CR7 Gym">
-        <img src="images/gym5.jpg" alt="CR7 Gym"><img src="images/gym6.jpg" alt="CR7 Gym"><img src="images/gym7.jpg" alt="CR7 Gym"><img src="images/gym8.jpg" alt="CR7 Gym">
-        <img src="images/gym9.jpg" alt="CR7 Gym"><img src="images/gym10.jpg" alt="CR7 Gym"><img src="images/gym11.jpg" alt="CR7 Gym"><img src="images/gym12.jpg" alt="CR7 Gym">
-        <img src="images/gym13.jpg" alt="CR7 Gym"><img src="images/gym14.jpg" alt="CR7 Gym"><img src="images/gym15.jpg" alt="CR7 Gym"><img src="images/gym16.jpg" alt="CR7 Gym">
-        <img src="images/gym17.jpg" alt="CR7 Gym"><img src="images/gym18.jpg" alt="CR7 Gym"><img src="images/gym19.jpg" alt="CR7 Gym"><img src="images/gym20.jpg" alt="CR7 Gym">
-        <img src="images/gym21.jpg" alt="CR7 Gym"><img src="images/gym22.jpg" alt="CR7 Gym"><img src="images/gym23.jpg" alt="CR7 Gym"><img src="images/gym24.jpg" alt="CR7 Gym">
+        <img src="/Images/gym1.jpg" alt="CR7 Gym"><img src="/Images/gym2.jpg" alt="CR7 Gym"><img src="/Images/gym3.jpg" alt="CR7 Gym"><img src="/Images/gym4.jpg" alt="CR7 Gym">
+        <img src="/Images/gym5.jpg" alt="CR7 Gym"><img src="/Images/gym6.jpg" alt="CR7 Gym"><img src="/Images/gym7.jpg" alt="CR7 Gym"><img src="/Images/gym8.jpg" alt="CR7 Gym">
+        <img src="/Images/gym9.jpg" alt="CR7 Gym"><img src="/Images/gym10.jpg" alt="CR7 Gym"><img src="/Images/gym11.jpg" alt="CR7 Gym"><img src="/Images/gym12.jpg" alt="CR7 Gym">
+        <img src="/Images/gym13.jpg" alt="CR7 Gym"><img src="/Images/gym14.jpg" alt="CR7 Gym"><img src="/Images/gym15.jpg" alt="CR7 Gym"><img src="/Images/gym16.jpg" alt="CR7 Gym">
+        <img src="/Images/gym17.jpg" alt="CR7 Gym"><img src="/Images/gym18.jpg" alt="CR7 Gym"><img src="/Images/gym19.jpg" alt="CR7 Gym"><img src="/Images/gym20.jpg" alt="CR7 Gym">
+        <img src="/Images/gym21.jpg" alt="CR7 Gym"><img src="/Images/gym22.jpg" alt="CR7 Gym"><img src="/Images/gym23.jpg" alt="CR7 Gym"><img src="/Images/gym24.jpg" alt="CR7 Gym">
       </div>
     </div>
 
