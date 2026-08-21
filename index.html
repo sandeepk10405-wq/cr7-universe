@@ -5,6 +5,149 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CR7 Universe</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ---------- EXTRA STYLES FOR HOME PAGE (MASALA VERSION) ---------- */
+    
+    /* 1. Glowing text animation for SIUUU */
+    .glow-text {
+      animation: glowPulse 2s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 10px #f5c518, 0 0 20px #f5c518; }
+      50% { text-shadow: 0 0 20px #f5c518, 0 0 40px #f5c518, 0 0 60px #f5c518; }
+      100% { text-shadow: 0 0 10px #f5c518, 0 0 20px #f5c518; }
+    }
+
+    /* 2. Flash Stats Cards */
+    .flash-stats {
+      display: flex;
+      justify-content: space-around;
+      gap: 15px;
+      margin: 20px 0 30px 0;
+      flex-wrap: wrap;
+    }
+    .stat-flash-card {
+      background: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 20px 25px;
+      text-align: center;
+      flex: 1;
+      min-width: 100px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .stat-flash-card:hover {
+      transform: translateY(-5px);
+      border-color: #f5c518;
+    }
+    .stat-flash-card .number {
+      font-size: 32px;
+      font-weight: 900;
+      color: #f5c518;
+      display: block;
+    }
+    .stat-flash-card .label {
+      font-size: 12px;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 5px;
+    }
+
+    /* 3. FIXED HERO SECTION (Text + CR7 Image Side by Side) */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      text-align: left;
+      padding: 40px 30px;
+      margin-bottom: 40px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0a0a0a 60%, #1a1a1a 100%);
+      border: 1px solid #2a2a2a;
+      overflow: hidden;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 250px;
+    }
+    .hero-text h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .hero-text p {
+      color: #ddd;
+      max-width: 500px;
+    }
+    .hero-image {
+      flex: 1;
+      text-align: center;
+      min-width: 200px;
+    }
+    .hero-image img {
+      max-width: 100%;
+      max-height: 380px;
+      width: auto;
+      border-radius: 20px;
+      border: 3px solid #f5c518;
+      box-shadow: 0 0 40px rgba(245, 197, 24, 0.3);
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .hero-image img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 60px rgba(245, 197, 24, 0.5);
+    }
+
+    /* 4. Fix for vertical video - make it smaller on desktop */
+    .ambassador-video-wrapper {
+      margin: 15px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 56.25%; /* Default 16:9 */
+      height: 0;
+      max-width: 400px; /* Limit width */
+      background: #000;
+    }
+    .ambassador-video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    /* 5. Responsive for Mobile */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+      }
+      .hero-text {
+        text-align: center;
+      }
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-image img {
+        max-height: 250px;
+      }
+    }
+    @media (max-width: 600px) {
+      .ambassador-video-wrapper {
+        max-width: 100%;
+        padding-bottom: 177.77%; /* 9:16 for mobile */
+      }
+      .stat-flash-card .number {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -20,17 +163,43 @@
   </nav>
 
   <div id="main-content">
-    <!-- Hero Section -->
+    
+    <!-- ✅ UPGRADED HERO SECTION: Text + CR7 Image -->
     <div id="home" class="hero">
-      <h1>SIUUU! <br> Welcome to <span style="color:#f5c518;">CR7 Universe</span></h1>
-      <p>Official fan hub of the greatest footballer in the world.<br>Get everything here - matches, lifestyle, and exclusive fan moments.</p>
-      <p style="color:#aaa; font-style:italic; margin-top:10px;">"I am not a perfectionist, but I like to feel that things are done well." – CR7</p>
+      <div class="hero-text">
+        <h1>
+          <span class="glow-text">SIUUU!</span> <br> 
+          Welcome to <span style="color:#f5c518;">CR7 Universe</span>
+        </h1>
+        <p>Official fan hub of the greatest footballer in the world.<br>Get everything here - matches, lifestyle, and exclusive fan moments.</p>
+        <p style="color:#aaa; font-style:italic; margin-top:10px;">"I am not a perfectionist, but I like to feel that things are done well." – CR7</p>
+      </div>
+      <div class="hero-image">
+        <!-- ✅ CR7 KI IMAGE (Wikipedia se reliable HD image) -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Cristiano_Ronaldo_2018.jpg/800px-Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo - CR7">
+      </div>
     </div>
 
     <div class="container">
       
+      <!-- ✅ FLASH STATS (Quick Glance) -->
+      <div class="flash-stats">
+        <div class="stat-flash-card">
+          <span class="number">900+</span>
+          <span class="label">Career Goals</span>
+        </div>
+        <div class="stat-flash-card">
+          <span class="number">5</span>
+          <span class="label">Ballon d'Or</span>
+        </div>
+        <div class="stat-flash-card">
+          <span class="number">5</span>
+          <span class="label">UCL Titles</span>
+        </div>
+      </div>
+
       <!-- Lifestyle Section -->
-      <div id="lifestyle" style="margin-top: 50px; padding-top: 20px;">
+      <div id="lifestyle" style="margin-top: 20px; padding-top: 20px;">
         <h2 class="section-title">👔 CR7 Lifestyle</h2>
         <div class="duo-card clickable-card" onclick="toggleInfo('lifestyle-info')">
           <h3>Fashion, Luxury & Cars</h3>
@@ -87,12 +256,13 @@
       <div class="fixtures-grid">
         <div class="duo-card">
           <div class="ambassador-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IShowSpeed_at_ESPN_2024.jpg/800px-IShowSpeed_at_ESPN_2024.jpg" alt="iShowSpeed">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IShowSpeed_at_ESPN_2024.jpg/800px-IShowSpeed_at_ESPN_2024.jpg" alt="iShowSpeed" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;">
             <h3 style="margin:0; color:#f5c518;">iShowSpeed</h3>
           </div>
           <p style="color:#aaa; margin-top: 10px;">Watch the iconic first meeting of Speed and CR7 right here!</p>
-          <div class="video-container" style="margin: 15px 0; border-radius: 10px; overflow: hidden; position: relative; padding-bottom: 177.77%; height: 0;">
-              <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Uv1PyE8J38w" frameborder="0" allowfullscreen></iframe>
+          <!-- ✅ FIXED VIDEO WRAPPER: Smaller size -->
+          <div class="ambassador-video-wrapper">
+            <iframe src="https://www.youtube.com/embed/Uv1PyE8J38w" frameborder="0" allowfullscreen></iframe>
           </div>
           <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#SpeedXCR7</span>
           <div style="margin-top: 12px;">
@@ -103,7 +273,7 @@
 
         <div class="duo-card">
           <div class="ambassador-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Georgina_Rodr%C3%ADguez_2023.jpg/800px-Georgina_Rodr%C3%ADguez_2023.jpg" alt="Georgina Rodriguez">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Georgina_Rodr%C3%ADguez_2023.jpg/800px-Georgina_Rodr%C3%ADguez_2023.jpg" alt="Georgina Rodriguez" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;">
             <h3 style="margin:0; color:#f5c518;">Georgina Rodriguez</h3>
           </div>
           <p style="color:#aaa; margin-top: 10px;">Ronaldo's better half and fashion icon. Her style evolution, family moments.</p>
