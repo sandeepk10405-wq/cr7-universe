@@ -6,41 +6,18 @@
   <title>Matches - CR7 Universe</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Modal Popup Styles */
-    .modal-overlay {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      display: none; justify-content: center; align-items: center;
-      z-index: 10000; padding: 20px;
-    }
-    .modal-box {
-      background: #1e1e1e; padding: 20px; border-radius: 15px;
-      max-width: 700px; width: 100%; border: 1px solid #f5c518;
-      position: relative;
-    }
-    .close-modal {
-      position: absolute; top: 10px; right: 15px;
-      color: #f5c518; font-size: 24px; cursor: pointer; font-weight: bold;
-    }
+    .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: none; justify-content: center; align-items: center; z-index: 10000; padding: 20px; }
+    .modal-box { background: #1e1e1e; padding: 20px; border-radius: 15px; max-width: 700px; width: 100%; border: 1px solid #f5c518; position: relative; }
+    .close-modal { position: absolute; top: 10px; right: 15px; color: #f5c518; font-size: 24px; cursor: pointer; font-weight: bold; }
     .modal-box h3 { color: #f5c518; margin-top: 5px; }
-    .modal-video-controls {
-      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
-      margin: 15px 0;
-    }
-    .modal-video-controls .watch-btn {
-      margin-top: 0; font-size: 12px; padding: 6px 14px;
-    }
-    .modal-video {
-      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin-top: 10px;
-    }
-    .modal-video iframe {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    }
+    .modal-video-controls { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 15px 0; }
+    .modal-video-controls .watch-btn { margin-top: 0; font-size: 12px; padding: 6px 14px; }
+    .modal-video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin-top: 10px; }
+    .modal-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     .back-home-btn { text-decoration: none; display: inline-block; margin-top: 20px; }
   </style>
 </head>
 <body>
-
   <nav class="navbar">
     <div class="logo">⚽ CR7</div>
     <div class="nav-links">
@@ -71,35 +48,14 @@
       <p style="color: #aaa; font-size: 14px;">📅 15 August 2026 | 🕗 8:30 PM IST</p>
       <p style="font-size: 13px;">🏟️ King Saud University Stadium, Riyadh</p>
       <p style="margin-top: 10px;">📊 Attending: <span id="countDisplay" style="color:#f5c518; font-weight:bold;">12</span></p>
-      
       <button id="attendBtn" class="attend-btn">✅ I'm Going!</button>
       <button id="openStreamBtn" class="watch-btn" onclick="openModal()">🔴 Watch from Home</button>
     </div>
 
     <h2 class="section-title">🔥 Upcoming Fixtures</h2>
     <div class="fixtures-grid">
-      <div class="duo-card">
-        <h3>Al-Nassr vs Al-Ittihad</h3>
-        <p style="color: #aaa; font-size: 14px;">📅 22 August 2026 | 🕗 9:00 PM IST</p>
-        <p style="font-size: 13px;">🏟️ King Abdullah Sports City, Jeddah</p>
-        <span class="status-tag">Upcoming</span>
-      </div>
-      <div class="duo-card">
-        <h3>Al-Nassr vs Al-Shabab</h3>
-        <p style="color: #aaa; font-size: 14px;">📅 29 August 2026 | 🕗 8:00 PM IST</p>
-        <p style="font-size: 13px;">🏟️ Mrsool Park, Riyadh</p>
-        <span class="status-tag">Upcoming</span>
-      </div>
-    </div>
-
-    <h2 class="section-title">🏆 CR7's Iconic Performances</h2>
-    <div class="fixtures-grid">
-      <div class="duo-card past-match">
-        <div class="match-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Cristiano_Ronaldo_2014_%28cropped%29.jpg/800px-Cristiano_Ronaldo_2014_%28cropped%29.jpg"></div>
-        <h3>Real Madrid vs Atlético Madrid</h3>
-        <p style="color:#f5c518; font-weight:bold;">4 - 1 (AET)</p>
-        <p style="color:#aaa; font-size: 14px;">🏆 UCL Final | 24 May 2014</p>
-      </div>
+      <div class="duo-card"><h3>Al-Nassr vs Al-Ittihad</h3><p style="color: #aaa; font-size: 14px;">📅 22 August 2026 | 🕗 9:00 PM IST</p><p style="font-size: 13px;">🏟️ King Abdullah Sports City, Jeddah</p><span class="status-tag">Upcoming</span></div>
+      <div class="duo-card"><h3>Al-Nassr vs Al-Shabab</h3><p style="color: #aaa; font-size: 14px;">📅 29 August 2026 | 🕗 8:00 PM IST</p><p style="font-size: 13px;">🏟️ Mrsool Park, Riyadh</p><span class="status-tag">Upcoming</span></div>
     </div>
 
     <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
@@ -108,44 +64,28 @@
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
 
-  <!-- 🟢 STREAM MODAL (Using your 3 provided video IDs) -->
+  <!-- Stream Modal -->
   <div id="streamModal" class="modal-overlay">
     <div class="modal-box">
       <span class="close-modal" onclick="closeModal()">×</span>
       <h3>🔴 CR7 Watch Party</h3>
-      
       <div class="modal-video-controls">
-        <!-- Ab aapke diye hue 3 links yahan use kiye gaye hain -->
-        <button class="watch-btn" onclick="changeVideo('FHs_qK_qELs')">📺 Match Highlights</button>
+        <button class="watch-btn" onclick="changeVideo('FHs_qK_qELs')">📺 Highlights</button>
         <button class="watch-btn" onclick="changeVideo('k5fqZoz-W8M')">⚽ Top Goals</button>
         <button class="watch-btn" onclick="changeVideo('PYR0R6Xxn5I')">✨ Best Moments</button>
       </div>
-
       <div class="modal-video">
-        <!-- Default Video -->
-        <iframe id="streamVideo" src="https://www.youtube.com/embed/FHs_qK_qELs" title="CR7 Universe - Watch Party" frameborder="0" allowfullscreen></iframe>
+        <iframe id="streamVideo" src="https://www.youtube.com/embed/FHs_qK_qELs" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
   <script>
-    function openModal() {
-      document.getElementById('streamModal').style.display = 'flex';
-    }
-    function closeModal() {
-      document.getElementById('streamModal').style.display = 'none';
-    }
-    function changeVideo(videoId) {
-      document.getElementById('streamVideo').src = "https://www.youtube.com/embed/" + videoId;
-    }
-    window.onclick = function(event) {
-      var modal = document.getElementById('streamModal');
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
+    function openModal() { document.getElementById('streamModal').style.display = 'flex'; }
+    function closeModal() { document.getElementById('streamModal').style.display = 'none'; }
+    function changeVideo(id) { document.getElementById('streamVideo').src = "https://www.youtube.com/embed/" + id; }
+    window.onclick = function(event) { if (event.target == document.getElementById('streamModal')) { document.getElementById('streamModal').style.display = 'none'; } }
   </script>
-
   <script src="script.js"></script>
 </body>
 </html>
