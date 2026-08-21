@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CR7 Universe</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <style>
-    /* ---------- EXTRA STYLES FOR HOME PAGE (MASALA VERSION) ---------- */
-    
-    /* 1. Glowing text animation for SIUUU */
+    /* ---------- GLOW ---------- */
     .glow-text {
       animation: glowPulse 2s ease-in-out infinite;
     }
@@ -18,7 +16,7 @@
       100% { text-shadow: 0 0 10px #f5c518, 0 0 20px #f5c518; }
     }
 
-    /* 2. Flash Stats Cards */
+    /* ---------- FLASH STATS ---------- */
     .flash-stats {
       display: flex;
       justify-content: space-around;
@@ -54,7 +52,7 @@
       margin-top: 5px;
     }
 
-    /* 3. FIXED HERO SECTION (Text + CR7 Image Side by Side) */
+    /* ---------- HERO (Text + Image side by side) ---------- */
     .hero {
       display: flex;
       align-items: center;
@@ -101,15 +99,15 @@
       box-shadow: 0 0 60px rgba(245, 197, 24, 0.5);
     }
 
-    /* 4. Fix for vertical video - make it smaller on desktop */
+    /* ---------- VIDEO (Speed) ---------- */
     .ambassador-video-wrapper {
       margin: 15px 0;
       border-radius: 10px;
       overflow: hidden;
       position: relative;
-      padding-bottom: 56.25%; /* Default 16:9 */
+      padding-bottom: 56.25%;
       height: 0;
-      max-width: 400px; /* Limit width */
+      max-width: 400px;
       background: #000;
     }
     .ambassador-video-wrapper iframe {
@@ -119,8 +117,8 @@
       width: 100%;
       height: 100%;
     }
-    
-    /* 5. Responsive for Mobile */
+
+    /* ---------- RESPONSIVE ---------- */
     @media (max-width: 768px) {
       .hero {
         flex-direction: column;
@@ -141,7 +139,7 @@
     @media (max-width: 600px) {
       .ambassador-video-wrapper {
         max-width: 100%;
-        padding-bottom: 177.77%; /* 9:16 for mobile */
+        padding-bottom: 177.77%;
       }
       .stat-flash-card .number {
         font-size: 24px;
@@ -163,26 +161,26 @@
   </nav>
 
   <div id="main-content">
-    
-    <!-- ✅ UPGRADED HERO SECTION: Text + CR7 Image -->
+
+    <!-- ===== HERO WITH CR7 IMAGE (RIGHT SIDE) ===== -->
     <div id="home" class="hero">
       <div class="hero-text">
         <h1>
-          <span class="glow-text">SIUUU!</span> <br> 
+          <span class="glow-text">SIUUU!</span> <br />
           Welcome to <span style="color:#f5c518;">CR7 Universe</span>
         </h1>
-        <p>Official fan hub of the greatest footballer in the world.<br>Get everything here - matches, lifestyle, and exclusive fan moments.</p>
+        <p>Official fan hub of the greatest footballer in the world.<br />Get everything here - matches, lifestyle, and exclusive fan moments.</p>
         <p style="color:#aaa; font-style:italic; margin-top:10px;">"I am not a perfectionist, but I like to feel that things are done well." – CR7</p>
       </div>
       <div class="hero-image">
-        <!-- ✅ CR7 KI IMAGE (Wikipedia se reliable HD image) -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Cristiano_Ronaldo_2018.jpg/800px-Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo - CR7">
+        <!-- ✅ CR7 IMAGE (Wikipedia - reliable) -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Cristiano_Ronaldo_2018.jpg/800px-Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo - CR7" />
       </div>
     </div>
 
     <div class="container">
-      
-      <!-- ✅ FLASH STATS (Quick Glance) -->
+
+      <!-- ===== FLASH STATS ===== -->
       <div class="flash-stats">
         <div class="stat-flash-card">
           <span class="number">900+</span>
@@ -198,7 +196,7 @@
         </div>
       </div>
 
-      <!-- Lifestyle Section -->
+      <!-- ===== LIFESTYLE ===== -->
       <div id="lifestyle" style="margin-top: 20px; padding-top: 20px;">
         <h2 class="section-title">👔 CR7 Lifestyle</h2>
         <div class="duo-card clickable-card" onclick="toggleInfo('lifestyle-info')">
@@ -215,7 +213,7 @@
         </div>
       </div>
 
-      <!-- Stats Section -->
+      <!-- ===== STATS ===== -->
       <div id="stats" style="margin-top: 50px; padding-top: 20px;">
         <h2 class="section-title">📊 CR7 Stats</h2>
         <div class="duo-card clickable-card" onclick="toggleInfo('stats-info')">
@@ -225,14 +223,14 @@
         </div>
         <div id="stats-info" class="info-panel" style="display: none;">
           <h3 style="color:#f5c518;">The GOAT's Numbers</h3>
-          <p><b>900+ Career Goals</b> - The greatest goalscorer in history.</p>
+          <p><b>900+ Career Goals</b> – The greatest goalscorer in history.</p>
           <p><b>5 Ballon d'Ors</b> (2008, 2013, 2014, 2016, 2017).</p>
-          <p><b>5 UCL Titles</b> - All-time top scorer in Champions League.</p>
+          <p><b>5 UCL Titles</b> – All-time top scorer in Champions League.</p>
           <button class="watch-btn" onclick="toggleInfo('stats-info')" style="margin-top:10px;">Close</button>
         </div>
       </div>
 
-      <!-- Fan Zone Section -->
+      <!-- ===== FAN ZONE ===== -->
       <div id="fanzone" style="margin-top: 50px; padding-top: 20px;">
         <h2 class="section-title">💛 CR7 Fan Zone</h2>
         <div class="duo-card clickable-card" onclick="toggleInfo('fanzone-info')">
@@ -245,22 +243,21 @@
           <p>Stay updated with match schedules, transfer rumors, and exclusive content.</p>
           <button class="watch-btn" onclick="toggleInfo('fanzone-info')" style="margin-top:10px;">Close</button>
         </div>
-        
         <div style="margin-top: 15px;">
           <a href="https://www.instagram.com/cristiano/" target="_blank" class="ambassador-link">📸 Follow CR7 on Instagram</a>
         </div>
       </div>
 
-      <!-- Fan Ambassadors -->
+      <!-- ===== FAN AMBASSADORS ===== -->
       <h2 class="section-title">🌟 Fan Ambassadors</h2>
       <div class="fixtures-grid">
+        <!-- iShowSpeed (spelling fixed) -->
         <div class="duo-card">
           <div class="ambassador-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IShowSpeed_at_ESPN_2024.jpg/800px-IShowSpeed_at_ESPN_2024.jpg" alt="iShowSpeed" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IShowSpeed_at_ESPN_2024.jpg/800px-IShowSpeed_at_ESPN_2024.jpg" alt="iShowSpeed" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;" />
             <h3 style="margin:0; color:#f5c518;">iShowSpeed</h3>
           </div>
           <p style="color:#aaa; margin-top: 10px;">Watch the iconic first meeting of Speed and CR7 right here!</p>
-          <!-- ✅ FIXED VIDEO WRAPPER: Smaller size -->
           <div class="ambassador-video-wrapper">
             <iframe src="https://www.youtube.com/embed/Uv1PyE8J38w" frameborder="0" allowfullscreen></iframe>
           </div>
@@ -271,9 +268,10 @@
           </div>
         </div>
 
+        <!-- Georgina (spelling fixed) -->
         <div class="duo-card">
           <div class="ambassador-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Georgina_Rodr%C3%ADguez_2023.jpg/800px-Georgina_Rodr%C3%ADguez_2023.jpg" alt="Georgina Rodriguez" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Georgina_Rodr%C3%ADguez_2023.jpg/800px-Georgina_Rodr%C3%ADguez_2023.jpg" alt="Georgina Rodriguez" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;" />
             <h3 style="margin:0; color:#f5c518;">Georgina Rodriguez</h3>
           </div>
           <p style="color:#aaa; margin-top: 10px;">Ronaldo's better half and fashion icon. Her style evolution, family moments.</p>
@@ -284,22 +282,23 @@
         </div>
       </div>
 
-      <!-- Shoutbox -->
+      <!-- ===== SHOUTBOX ===== -->
       <h2 class="section-title">💬 CR7 Fan Shoutbox</h2>
       <div class="shoutbox-container">
         <div class="shoutbox-form">
-          <input type="text" id="shoutName" placeholder="Your name (e.g., CR7 Fan)">
-          <input type="text" id="shoutMsg" placeholder="Write your message for CR7...">
+          <input type="text" id="shoutName" placeholder="Your name (e.g., CR7 Fan)" />
+          <input type="text" id="shoutMsg" placeholder="Write your message for CR7..." />
           <button id="shoutBtn" class="attend-btn">Send 💬</button>
         </div>
         <div id="shoutboxMessages" class="shoutbox-messages"></div>
       </div>
+
     </div>
   </div>
 
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
