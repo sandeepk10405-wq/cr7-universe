@@ -6,21 +6,268 @@
   <title>Fan Zone - CR7 Universe</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ✅ FIXED: Ab image crop nahi hogi, full width mein proportionate scale hogi */
+    /* ---------- GLOBAL PAGE STYLING ---------- */
     .fan-hero-img {
       width: 100%;
-      height: auto;              /* Height automatic adjust hogi */
+      height: auto;
       border-radius: 16px;
       border: 2px solid #f5c518;
       margin-bottom: 25px;
       box-shadow: 0 0 30px rgba(245, 197, 24, 0.2);
-      display: block;            /* Extra spacing hatane ke liye */
-      background: #111;          /* Load hone tak background */
+      display: block;
+      background: #111;
     }
+
+    .section-title {
+      margin: 35px 0 20px 0;
+      border-left: 4px solid #f5c518;
+      padding-left: 10px;
+    }
+
     .back-home-btn {
       text-decoration: none;
       display: inline-block;
-      margin-top: 20px;
+      margin: 30px 0 20px 0;
+    }
+
+    /* ---------- 1. QUIZ STYLING ---------- */
+    .quiz-question {
+      background: #1e1e1e;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border-left: 3px solid #f5c518;
+    }
+    .quiz-question p {
+      font-weight: bold;
+      color: #f5c518;
+      margin-bottom: 10px;
+    }
+    .quiz-options label {
+      display: block;
+      background: #2a2a2a;
+      padding: 8px 15px;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #ccc;
+    }
+    .quiz-options label:hover {
+      background: #333;
+      border-color: #f5c518;
+    }
+    .quiz-options input[type="radio"] {
+      margin-right: 10px;
+      accent-color: #f5c518;
+    }
+    .quiz-result {
+      background: #1e1e1e;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      border: 2px solid #f5c518;
+      margin-top: 15px;
+      display: none;
+    }
+    .quiz-result .score-high {
+      color: #4caf50;
+    }
+    .quiz-result .score-low {
+      color: #ff5722;
+    }
+
+    /* ---------- 2. POLL STYLING ---------- */
+    .poll-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 15px 0;
+    }
+    .poll-btn {
+      background: #2a2a2a;
+      border: 1px solid #444;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .poll-btn:hover {
+      border-color: #f5c518;
+      background: #333;
+      transform: scale(1.02);
+    }
+    .poll-btn .vote-bar {
+      background: #f5c518;
+      height: 6px;
+      border-radius: 10px;
+      transition: width 0.5s ease;
+      width: 0%;
+    }
+    .poll-result-stats {
+      margin-top: 15px;
+      padding: 15px;
+      background: #1a1a1a;
+      border-radius: 10px;
+      border: 1px solid #333;
+    }
+    .poll-stat-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid #222;
+    }
+
+    /* ---------- 3. BIG SHOUTBOX ---------- */
+    .big-shoutbox .shoutbox-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .big-shoutbox .shoutbox-form input {
+      flex: 1;
+      background: #2a2a2a;
+      border: 1px solid #444;
+      color: #fff;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      min-width: 140px;
+    }
+    .big-shoutbox .shoutbox-form input:focus {
+      border-color: #f5c518;
+      outline: none;
+    }
+    .big-shoutbox .shoutbox-messages {
+      max-height: 350px;
+      overflow-y: auto;
+      margin-top: 15px;
+    }
+    .big-shoutbox .shout-msg {
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      border-left: 4px solid #f5c518;
+    }
+    .big-shoutbox .shout-msg strong {
+      color: #f5c518;
+      font-size: 16px;
+    }
+    .big-shoutbox .shout-msg span {
+      color: #666;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+    .big-shoutbox .shout-msg p {
+      margin: 5px 0 0 0;
+      color: #ddd;
+      font-size: 15px;
+    }
+
+    /* ---------- 4. WALLPAPERS ---------- */
+    .wallpaper-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .wallpaper-card {
+      background: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #2a2a2a;
+      transition: 0.3s;
+    }
+    .wallpaper-card:hover {
+      border-color: #f5c518;
+      transform: translateY(-5px);
+    }
+    .wallpaper-card img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9/16; /* Phone wallpaper ratio */
+      object-fit: cover;
+      display: block;
+      background: #111;
+    }
+    .wallpaper-card .card-body {
+      padding: 15px;
+      text-align: center;
+    }
+    .wallpaper-card .download-btn {
+      background: #f5c518;
+      color: #121212;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .wallpaper-card .download-btn:hover {
+      background: #ffd700;
+      transform: scale(1.05);
+    }
+
+    /* ---------- 5. SOCIAL ARMY ---------- */
+    .army-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 15px 0 10px 0;
+    }
+    .army-btn {
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #121212;
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+      border: 2px solid transparent;
+      flex: 1 1 auto;
+      justify-content: center;
+    }
+    .army-btn.ig {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+    }
+    .army-btn.yt {
+      background: #ff0000;
+      color: #fff;
+    }
+    .army-btn.wa {
+      background: #25d366;
+      color: #fff;
+    }
+    .army-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(245, 197, 24, 0.3);
+      border-color: #f5c518;
+    }
+
+    /* ---------- RESPONSIVE TWEAKS ---------- */
+    @media (max-width: 600px) {
+      .wallpaper-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .army-btn {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
@@ -39,73 +286,278 @@
 
   <div class="container">
 
-    <!-- ===== TOP PAR CR7 KI IMAGE (AB CROP NAHI HOGI) ===== -->
-    <img class="fan-hero-img" src="images/Ronaldo-hero2.jpg" alt="CR7 - Fan Zone" />
+    <!-- === TOP BANNER IMAGE (NO CROP - FULL WIDTH) === -->
+    <img class="fan-hero-img" src="images/Ronaldo-hero2.jpg" alt="CR7 Universe Fan Zone" />
 
-    <h2 class="section-title">💛 CR7 Fan Zone</h2>
-    
-    <!-- Welcome Card -->
+    <!-- ============================================================ -->
+    <!-- 1. 🎯 CR7 GOAT QUIZ -->
+    <!-- ============================================================ -->
+    <h2 class="section-title">🎯 CR7 GOAT Quiz</h2>
+    <div class="duo-card" id="quizContainer">
+      <p style="color:#aaa; margin-bottom:15px;">अपनी CR7 knowledge को test करो और देखो तुम कितने बड़े फैन हो!</p>
+      <div id="quizQuestions"></div>
+      <button id="submitQuizBtn" class="attend-btn" style="width:100%; margin-top:10px;">✅ Submit Quiz</button>
+      <div id="quizResult" class="quiz-result"></div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 2. 🗳️ FAN POLLS -->
+    <!-- ============================================================ -->
+    <h2 class="section-title">🗳️ Fan Polls</h2>
     <div class="duo-card">
-      <h3>Welcome to the Global CR7 Army</h3>
-      <p style="color:#aaa;">Connect with fans worldwide. Share your love for the GOAT!</p>
-      <div style="margin-top: 15px;">
-        <a href="https://www.instagram.com/cristiano/" target="_blank" class="ambassador-link">📸 CR7 Instagram</a>
-        <a href="https://www.youtube.com/@cristiano" target="_blank" class="ambassador-link">▶ CR7 YouTube</a>
+      <h3>🐐 Ronaldo vs Messi - Who is the GOAT?</h3>
+      <div class="poll-options" id="pollContainer">
+        <button class="poll-btn" data-vote="ronaldo">🇵🇹 Cristiano Ronaldo <span id="pollRonaldo">0%</span></button>
+        <button class="poll-btn" data-vote="messi">🇦🇷 Lionel Messi <span id="pollMessi">0%</span></button>
+        <button class="poll-btn" data-vote="both">👑 Both are Legends <span id="pollBoth">0%</span></button>
+      </div>
+      <div class="poll-result-stats" id="pollStats">
+        <div class="poll-stat-item"><span>Total Votes:</span> <span id="totalVotes">0</span></div>
       </div>
     </div>
 
-    <!-- ===== FAN AMBASSADORS ===== -->
-    <h2 class="section-title">🌟 Fan Ambassadors</h2>
-    <div class="fixtures-grid">
-      
-      <!-- iShowSpeed (Spelling sahi ki gayi) -->
-      <div class="duo-card">
-        <div class="ambassador-img">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IShowSpeed_at_ESPN_2024.jpg/800px-IShowSpeed_at_ESPN_2024.jpg" alt="iShowSpeed" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;" />
-          <h3 style="margin:0; color:#f5c518;">iShowSpeed</h3>
-        </div>
-        <p style="color:#aaa; margin-top: 10px;">Watch the iconic first meeting of Speed and CR7 right here!</p>
-        <div style="margin: 15px 0; border-radius: 10px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0;">
-          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Uv1PyE8J38w" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#SpeedXCR7</span>
-        <div style="margin-top: 12px;">
-          <a href="https://www.youtube.com/@IShowSpeed" target="_blank" class="ambassador-link">▶ YouTube</a>
-          <a href="https://www.instagram.com/ishowspeed/" target="_blank" class="ambassador-link">📸 Instagram</a>
-        </div>
-      </div>
-
-      <!-- Georgina (Spelling sahi ki gayi) -->
-      <div class="duo-card">
-        <div class="ambassador-img">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Georgina_Rodr%C3%ADguez_2023.jpg/800px-Georgina_Rodr%C3%ADguez_2023.jpg" alt="Georgina Rodriguez" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;" />
-          <h3 style="margin:0; color:#f5c518;">Georgina Rodriguez</h3>
-        </div>
-        <p style="color:#aaa; margin-top: 10px;">Ronaldo's better half and fashion icon. Her style evolution, family moments.</p>
-        <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#GioStyle</span>
-        <div style="margin-top: 12px;">
-          <a href="https://www.instagram.com/georginagio/" target="_blank" class="ambassador-link">📸 Follow on Instagram</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== FAN SHOUTBOX ===== -->
-    <h2 class="section-title">💬 CR7 Fan Shoutbox</h2>
-    <div class="shoutbox-container">
+    <!-- ============================================================ -->
+    <!-- 3. 💬 DEDICATED BIG SHOUTBOX -->
+    <!-- ============================================================ -->
+    <h2 class="section-title">💬 CR7 Army Shoutbox</h2>
+    <div class="duo-card big-shoutbox">
       <div class="shoutbox-form">
-        <input type="text" id="shoutName" placeholder="Your name (e.g., CR7 Fan)" />
-        <input type="text" id="shoutMsg" placeholder="Write your message for CR7..." />
-        <button id="shoutBtn" class="attend-btn">Send 💬</button>
+        <input type="text" id="fanShoutName" placeholder="Your name (e.g., CR7 Army)" />
+        <input type="text" id="fanShoutMsg" placeholder="Write your message for CR7..." />
+        <button id="fanShoutBtn" class="attend-btn">Post 📢</button>
       </div>
-      <div id="shoutboxMessages" class="shoutbox-messages"></div>
+      <div id="fanShoutMessages" class="shoutbox-messages"></div>
     </div>
 
+    <!-- ============================================================ -->
+    <!-- 4. 📱 CR7 WALLPAPERS (DOWNLOAD) -->
+    <!-- ============================================================ -->
+    <h2 class="section-title">📱 CR7 Wallpapers</h2>
+    <div class="wallpaper-grid">
+      <!-- Wallpaper 1 -->
+      <div class="wallpaper-card">
+        <img src="images/Ronaldo-hero.jpg" alt="CR7 Wallpaper 1" />
+        <div class="card-body">
+          <a href="images/Ronaldo-hero.jpg" download="CR7_Wallpaper_1.jpg" class="download-btn">⬇️ Download</a>
+        </div>
+      </div>
+      <!-- Wallpaper 2 -->
+      <div class="wallpaper-card">
+        <img src="images/Ronaldo-hero2.jpg" alt="CR7 Wallpaper 2" />
+        <div class="card-body">
+          <a href="images/Ronaldo-hero2.jpg" download="CR7_Wallpaper_2.jpg" class="download-btn">⬇️ Download</a>
+        </div>
+      </div>
+      <!-- Wallpaper 3 -->
+      <div class="wallpaper-card">
+        <img src="images/Ronaldo-fashion.jpg" alt="CR7 Wallpaper 3" />
+        <div class="card-body">
+          <a href="images/Ronaldo-fashion.jpg" download="CR7_Wallpaper_3.jpg" class="download-btn">⬇️ Download</a>
+        </div>
+      </div>
+      <!-- Wallpaper 4 (Extra) -->
+      <div class="wallpaper-card">
+        <img src="images/Ronaldo-BMW.jpg" alt="CR7 Wallpaper 4" />
+        <div class="card-body">
+          <a href="images/Ronaldo-BMW.jpg" download="CR7_Wallpaper_4.jpg" class="download-btn">⬇️ Download</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 5. 📢 JOIN THE CR7 ARMY (SOCIAL) -->
+    <!-- ============================================================ -->
+    <h2 class="section-title">📢 Join the CR7 Army</h2>
+    <div class="duo-card" style="text-align:center;">
+      <p style="color:#aaa; margin-bottom:15px;">हमारे साथ जुड़ें और बनें इस Global Army का हिस्सा!</p>
+      <div class="army-buttons">
+        <a href="https://www.instagram.com/cristiano/" target="_blank" class="army-btn ig">📸 Follow on Instagram</a>
+        <a href="https://www.youtube.com/@cristiano" target="_blank" class="army-btn yt">▶ Subscribe on YouTube</a>
+        <!-- WhatsApp Link - Yahan apna group link daalo, placeholder hai -->
+        <a href="https://chat.whatsapp.com/YourGroupLinkHere" target="_blank" class="army-btn wa">💬 Join WhatsApp Group</a>
+      </div>
+    </div>
+
+    <!-- Back to Home -->
     <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
   </div>
 
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
 
-  <script src="script.js"></script>
+  <script>
+    // ================================================================
+    // 🚀 FEATURE 1: CR7 GOAT QUIZ (5 Questions)
+    // ================================================================
+    const quizData = [
+      {
+        question: "CR7 ने अपना पहला Ballon d'Or किस साल जीता था?",
+        options: ["2006", "2008", "2010", "2012"],
+        correct: 1 // index 1 = 2008
+      },
+      {
+        question: "CR7 ने कुल कितने UEFA Champions League (UCL) टाइटल जीते हैं?",
+        options: ["3", "4", "5", "6"],
+        correct: 2 // index 2 = 5
+      },
+      {
+        question: "CR7 ने किस क्लब के लिए सबसे ज्यादा गोल किए हैं?",
+        options: ["Sporting CP", "Manchester United", "Real Madrid", "Al-Nassr"],
+        correct: 2 // Real Madrid
+      },
+      {
+        question: "CR7 का सिग्नेचर सेलिब्रेशन क्या कहलाता है?",
+        options: ["Dab", "Siuuu", "Floss", "Moonwalk"],
+        correct: 1 // Siuuu
+      },
+      {
+        question: "CR7 ने Portugal के लिए UEFA Euro कब जीता था?",
+        options: ["2012", "2014", "2016", "2018"],
+        correct: 2 // 2016
+      }
+    ];
+
+    let userAnswers = [];
+
+    function renderQuiz() {
+      const container = document.getElementById('quizQuestions');
+      container.innerHTML = '';
+      quizData.forEach((q, index) => {
+        const div = document.createElement('div');
+        div.className = 'quiz-question';
+        div.innerHTML = `<p>Q${index + 1}: ${q.question}</p><div class="quiz-options">`;
+        q.options.forEach((opt, optIdx) => {
+          div.innerHTML += `
+            <label>
+              <input type="radio" name="q${index}" value="${optIdx}" />
+              ${opt}
+            </label>
+          `;
+        });
+        div.innerHTML += `</div>`;
+        container.appendChild(div);
+      });
+    }
+    renderQuiz();
+
+    document.getElementById('submitQuizBtn').addEventListener('click', function() {
+      let score = 0;
+      let allAnswered = true;
+      quizData.forEach((q, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        if (selected) {
+          if (parseInt(selected.value) === q.correct) score++;
+        } else {
+          allAnswered = false;
+        }
+      });
+
+      const resultDiv = document.getElementById('quizResult');
+      resultDiv.style.display = 'block';
+      if (!allAnswered) {
+        resultDiv.innerHTML = `<span style="color:#ff5722;">⚠️ कृपया सभी सवालों का जवाब दें!</span>`;
+        return;
+      }
+
+      let msg = '';
+      if (score === 5) msg = '🏆 Perfect! You are the ULTIMATE GOAT fan! 🐐';
+      else if (score >= 4) msg = '🔥 Amazing! You are a True CR7 Legend!';
+      else if (score >= 3) msg = '👍 Good! But read more about the GOAT!';
+      else msg = '😅 Oops! Go watch some CR7 highlights and come back!';
+
+      resultDiv.innerHTML = `<div><span class="${score >= 4 ? 'score-high' : 'score-low'}">${score}/${quizData.length}</span><br>${msg}</div>`;
+    });
+
+    // ================================================================
+    // 🚀 FEATURE 2: FAN POLLS (Local Storage)
+    // ================================================================
+    let pollData = JSON.parse(localStorage.getItem('cr7GoatPoll')) || { ronaldo: 0, messi: 0, both: 0 };
+
+    function updatePollUI() {
+      const total = pollData.ronaldo + pollData.messi + pollData.both;
+      document.getElementById('totalVotes').textContent = total;
+
+      const getPercent = (val) => total === 0 ? 0 : Math.round((val / total) * 100);
+      document.getElementById('pollRonaldo').textContent = getPercent(pollData.ronaldo) + '%';
+      document.getElementById('pollMessi').textContent = getPercent(pollData.messi) + '%';
+      document.getElementById('pollBoth').textContent = getPercent(pollData.both) + '%';
+
+      // Save to localStorage
+      localStorage.setItem('cr7GoatPoll', JSON.stringify(pollData));
+    }
+
+    document.querySelectorAll('.poll-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const vote = this.dataset.vote;
+        if (pollData[vote] !== undefined) {
+          pollData[vote]++;
+          updatePollUI();
+          // Disable buttons after voting to prevent spam
+          document.querySelectorAll('.poll-btn').forEach(b => b.disabled = true);
+          this.style.borderColor = '#f5c518';
+          this.style.background = '#2a2a2a';
+        }
+      });
+    });
+    updatePollUI();
+
+    // ================================================================
+    // 🚀 FEATURE 3: DEDICATED BIG SHOUTBOX
+    // ================================================================
+    const shoutName = document.getElementById('fanShoutName');
+    const shoutMsg = document.getElementById('fanShoutMsg');
+    const shoutBtn = document.getElementById('fanShoutBtn');
+    const shoutContainer = document.getElementById('fanShoutMessages');
+
+    let fanMessages = JSON.parse(localStorage.getItem('cr7FanShoutbox')) || [];
+
+    function renderFanShouts() {
+      shoutContainer.innerHTML = '';
+      fanMessages.forEach(msg => {
+        const div = document.createElement('div');
+        div.className = 'shout-msg';
+        div.innerHTML = `<strong>${msg.name}</strong> <span>(${msg.time})</span><p>${msg.text}</p>`;
+        shoutContainer.appendChild(div);
+      });
+      shoutContainer.scrollTop = shoutContainer.scrollHeight;
+    }
+    renderFanShouts();
+
+    function postFanShout() {
+      const name = shoutName.value.trim() || 'CR7 Army';
+      const text = shoutMsg.value.trim();
+      if (!text) return;
+      const time = new Date().toLocaleTimeString();
+      fanMessages.push({ name, text, time });
+      localStorage.setItem('cr7FanShoutbox', JSON.stringify(fanMessages));
+      shoutName.value = '';
+      shoutMsg.value = '';
+      renderFanShouts();
+    }
+
+    shoutBtn.addEventListener('click', postFanShout);
+    shoutMsg.addEventListener('keypress', (e) => { if (e.key === 'Enter') postFanShout(); });
+    shoutName.addEventListener('keypress', (e) => { if (e.key === 'Enter') postFanShout(); });
+
+    // ================================================================
+    // 🚀 SCROLL TO TOP (Global)
+    // ================================================================
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ================================================================
+    // 🚀 FALLBACK: Ensure script doesn't break if elements missing
+    // ================================================================
+    console.log('✅ CR7 Fan Zone - All Features Loaded Successfully!');
+  </script>
 </body>
 </html>
