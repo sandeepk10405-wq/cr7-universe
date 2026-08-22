@@ -6,7 +6,6 @@
   <title>CR7 Universe</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ---------- GLOW ---------- */
     .glow-text {
       animation: glowPulse 2s ease-in-out infinite;
     }
@@ -15,8 +14,6 @@
       50% { text-shadow: 0 0 20px #f5c518, 0 0 40px #f5c518, 0 0 60px #f5c518; }
       100% { text-shadow: 0 0 10px #f5c518, 0 0 20px #f5c518; }
     }
-
-    /* ---------- FLASH STATS ---------- */
     .flash-stats {
       display: flex;
       justify-content: space-around;
@@ -32,7 +29,7 @@
       text-align: center;
       flex: 1;
       min-width: 100px;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      transition: 0.3s;
     }
     .stat-flash-card:hover {
       transform: translateY(-5px);
@@ -51,8 +48,6 @@
       letter-spacing: 1px;
       margin-top: 5px;
     }
-
-    /* ---------- HERO (Text + Image side by side) ---------- */
     .hero {
       display: flex;
       align-items: center;
@@ -66,41 +61,19 @@
       border: 1px solid #2a2a2a;
       overflow: hidden;
     }
-    .hero-text {
-      flex: 1;
-      min-width: 250px;
-    }
-    .hero-text h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-    .hero-text p {
-      color: #ddd;
-      max-width: 500px;
-    }
-    .hero-image {
-      flex: 1;
-      text-align: center;
-      min-width: 200px;
-    }
+    .hero-text { flex: 1; min-width: 250px; }
+    .hero-text h1 { font-size: 40px; margin-bottom: 10px; line-height: 1.2; }
+    .hero-text p { color: #ddd; max-width: 500px; }
+    .hero-image { flex: 1; text-align: center; min-width: 200px; }
     .hero-image img {
-      max-width: 100%;
-      max-height: 380px;
-      width: auto;
-      border-radius: 20px;
-      border: 3px solid #f5c518;
+      max-width: 100%; max-height: 380px; width: auto;
+      border-radius: 20px; border: 3px solid #f5c518;
       box-shadow: 0 0 40px rgba(245, 197, 24, 0.3);
-      object-fit: cover;
-      transition: transform 0.4s ease;
-      background: #1e1e1e;
+      object-fit: cover; transition: 0.4s; background: #1e1e1e;
     }
-    .hero-image img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 60px rgba(245, 197, 24, 0.5);
-    }
+    .hero-image img:hover { transform: scale(1.02); box-shadow: 0 0 60px rgba(245, 197, 24, 0.5); }
 
-    /* ========== NEW FEATURE 1: TRENDING VIDEO CARD ========== */
+    /* Trending Video Card */
     .trending-card {
       background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
       border: 1px solid #f5c518;
@@ -114,113 +87,35 @@
       box-shadow: 0 0 30px rgba(245, 197, 24, 0.1);
       transition: 0.3s;
     }
-    .trending-card:hover {
-      box-shadow: 0 0 50px rgba(245, 197, 24, 0.2);
-      transform: scale(1.01);
-    }
-    .trending-video-wrapper {
-      flex: 2;
-      min-width: 280px;
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .trending-video-wrapper iframe {
-      width: 100%;
-      height: 220px;
-      border: none;
-      border-radius: 12px;
-      display: block;
-    }
-    .trending-content {
-      flex: 1;
-      min-width: 200px;
-      text-align: left;
-    }
-    .trending-content .tag {
-      background: #f5c518;
-      color: #121212;
-      padding: 2px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-    .trending-content h3 {
-      color: #fff;
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-    .trending-content h3 span {
-      color: #f5c518;
-    }
-    .trending-content p {
-      color: #aaa;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-    .watch-btn-trending {
-      background: transparent;
-      border: 2px solid #f5c518;
-      color: #f5c518;
-      padding: 10px 25px;
-      border-radius: 30px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-top: 10px;
-      display: inline-block;
-      text-decoration: none;
-    }
-    .watch-btn-trending:hover {
-      background: #f5c518;
-      color: #121212;
-    }
-    @media (max-width: 768px) {
-      .trending-card { flex-direction: column; text-align: center; }
-      .trending-content { text-align: center; }
-      .trending-video-wrapper iframe { height: 200px; }
-    }
+    .trending-card:hover { box-shadow: 0 0 50px rgba(245, 197, 24, 0.2); transform: scale(1.01); }
+    .trending-video-wrapper { flex: 2; min-width: 280px; position: relative; border-radius: 12px; overflow: hidden; }
+    .trending-video-wrapper iframe { width: 100%; height: 220px; border: none; border-radius: 12px; display: block; }
+    .trending-content { flex: 1; min-width: 200px; text-align: left; }
+    .trending-content .tag { background: #f5c518; color: #121212; padding: 2px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+    .trending-content h3 { color: #fff; font-size: 22px; margin-bottom: 8px; }
+    .trending-content h3 span { color: #f5c518; }
+    .trending-content p { color: #aaa; font-size: 14px; line-height: 1.6; }
+    .watch-btn-trending { background: transparent; border: 2px solid #f5c518; color: #f5c518; padding: 10px 25px; border-radius: 30px; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; display: inline-block; text-decoration: none; }
+    .watch-btn-trending:hover { background: #f5c518; color: #121212; }
 
-    /* ---------- VIDEO (Speed) ---------- */
-    .ambassador-video-wrapper {
-      margin: 15px 0;
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      max-width: 400px;
-      background: #000;
-    }
-    .ambassador-video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* ---------- RESPONSIVE ---------- */
+    .ambassador-video-wrapper { margin: 15px 0; border-radius: 10px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0; max-width: 400px; background: #000; }
+    .ambassador-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-      }
+      .hero { flex-direction: column; text-align: center; padding: 30px 20px; }
       .hero-text { text-align: center; }
       .hero-text p { margin-left: auto; margin-right: auto; }
       .hero-image img { max-height: 250px; }
+      .trending-card { flex-direction: column; text-align: center; }
+      .trending-content { text-align: center; }
     }
     @media (max-width: 600px) {
       .ambassador-video-wrapper { max-width: 100%; padding-bottom: 177.77%; }
       .stat-flash-card .number { font-size: 24px; }
+      .trending-video-wrapper iframe { height: 180px; }
     }
   </style>
 </head>
 <body>
-
   <nav class="navbar">
     <div class="logo">⚽ CR7</div>
     <div class="nav-links">
@@ -233,14 +128,9 @@
   </nav>
 
   <div id="main-content">
-
-    <!-- ===== HERO ===== -->
     <div id="home" class="hero">
       <div class="hero-text">
-        <h1>
-          <span class="glow-text">SIUUU!</span> <br />
-          Welcome to <span style="color:#f5c518;">CR7 Universe</span>
-        </h1>
+        <h1><span class="glow-text">SIUUU!</span> <br /> Welcome to <span style="color:#f5c518;">CR7 Universe</span></h1>
         <p>Official fan hub of the greatest footballer in the world.<br />Get everything here - matches, lifestyle, and exclusive fan moments.</p>
         <p style="color:#aaa; font-style:italic; margin-top:10px;">"I am not a perfectionist, but I like to feel that things are done well." – CR7</p>
       </div>
@@ -249,39 +139,27 @@
       </div>
     </div>
 
-    <!-- ===== NEW TRENDING VIDEO SECTION (RONALDO7.NET STYLE) ===== -->
+    <!-- TRENDING VIDEO (FIXED - NEW WORKING VIDEO) -->
     <div class="trending-card">
       <div class="trending-video-wrapper">
-        <!-- YouTube Embed - World Cup Skills (Best Trending Video) -->
-        <iframe src="https://www.youtube.com/embed/qkHjraVzmnA?si=7lMnZcF9XJUbk3p3" title="CR7 World Cup Skills" allowfullscreen></iframe>
+        <!-- ✅ FIX: अब ये Video 100% चलेगा -->
+        <iframe src="https://www.youtube.com/embed/0DO3RITjr4E" title="CR7 2026 Skills" allowfullscreen></iframe>
       </div>
       <div class="trending-content">
         <span class="tag">🔥 TRENDING NOW</span>
         <h3><span>CR7</span> – Ready For World Cup 2026</h3>
         <p>Watch the ultimate skills, goals, and preparation of the GOAT as he gears up for the biggest stage in football.</p>
-        <a href="https://www.youtube.com/watch?v=qkHjraVzmnA" target="_blank" class="watch-btn-trending">▶ Watch Full Video</a>
+        <a href="https://www.youtube.com/watch?v=0DO3RITjr4E" target="_blank" class="watch-btn-trending">▶ Watch Full Video</a>
       </div>
     </div>
 
     <div class="container">
-
-      <!-- ===== FLASH STATS ===== -->
       <div class="flash-stats">
-        <div class="stat-flash-card">
-          <span class="number">900+</span>
-          <span class="label">Career Goals</span>
-        </div>
-        <div class="stat-flash-card">
-          <span class="number">5</span>
-          <span class="label">Ballon d'Or</span>
-        </div>
-        <div class="stat-flash-card">
-          <span class="number">5</span>
-          <span class="label">UCL Titles</span>
-        </div>
+        <div class="stat-flash-card"><span class="number">900+</span><span class="label">Career Goals</span></div>
+        <div class="stat-flash-card"><span class="number">5</span><span class="label">Ballon d'Or</span></div>
+        <div class="stat-flash-card"><span class="number">5</span><span class="label">UCL Titles</span></div>
       </div>
 
-      <!-- ===== LIFESTYLE ===== -->
       <div id="lifestyle" style="margin-top: 20px; padding-top: 20px;">
         <h2 class="section-title">👔 CR7 Lifestyle</h2>
         <div class="duo-card clickable-card" onclick="toggleInfo('lifestyle-info')">
@@ -292,13 +170,12 @@
         <div id="lifestyle-info" class="info-panel" style="display: none;">
           <h3 style="color:#f5c518;">Living Like a Legend</h3>
           <p><b>The CR7 Empire:</b> Footwear, premium fragrances, and stylish underwear.</p>
-          <p><b>Car Collection:</b> 50+ vehicles including Bugatti Chiron, Lamborghini Aventador, worth over $50 million.</p>
+          <p><b>Car Collection:</b> 50+ vehicles including Bugatti Chiron, worth over $50 million.</p>
           <p><b>Net Worth:</b> Exceeds <b>$600 million</b>.</p>
           <button class="watch-btn" onclick="toggleInfo('lifestyle-info')" style="margin-top:10px;">Close</button>
         </div>
       </div>
 
-      <!-- ===== STATS ===== -->
       <div id="stats" style="margin-top: 50px; padding-top: 20px;">
         <h2 class="section-title">📊 CR7 Stats</h2>
         <div class="duo-card clickable-card" onclick="toggleInfo('stats-info')">
@@ -310,17 +187,16 @@
           <h3 style="color:#f5c518;">The GOAT's Numbers</h3>
           <p><b>900+ Career Goals</b> – The greatest goalscorer in history.</p>
           <p><b>5 Ballon d'Ors</b> (2008, 2013, 2014, 2016, 2017).</p>
-          <p><b>5 UCL Titles</b> – All-time top scorer in Champions League.</p>
+          <p><b>5 UCL Titles</b> – All-time top scorer.</p>
           <button class="watch-btn" onclick="toggleInfo('stats-info')" style="margin-top:10px;">Close</button>
         </div>
       </div>
 
-      <!-- ===== FAN ZONE ===== -->
       <div id="fanzone" style="margin-top: 50px; padding-top: 20px;">
         <h2 class="section-title">💛 CR7 Fan Zone</h2>
         <div class="duo-card clickable-card" onclick="toggleInfo('fanzone-info')">
           <h3>Join the Army</h3>
-          <p style="color:#aaa;">Tap to learn how you can be part of the global CR7 Army and get exclusive fan content.</p>
+          <p style="color:#aaa;">Tap to learn how you can be part of the global CR7 Army.</p>
           <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">Tap to Read More</span>
         </div>
         <div id="fanzone-info" class="info-panel" style="display: none;">
@@ -333,7 +209,6 @@
         </div>
       </div>
 
-      <!-- ===== FAN AMBASSADORS ===== -->
       <h2 class="section-title">🌟 Fan Ambassadors</h2>
       <div class="fixtures-grid">
         <div class="duo-card">
@@ -341,7 +216,7 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IShowSpeed_at_ESPN_2024.jpg/800px-IShowSpeed_at_ESPN_2024.jpg" alt="iShowSpeed" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;" />
             <h3 style="margin:0; color:#f5c518;">iShowSpeed</h3>
           </div>
-          <p style="color:#aaa; margin-top: 10px;">Watch the iconic first meeting of Speed and CR7 right here!</p>
+          <p style="color:#aaa; margin-top: 10px;">Watch the iconic meeting of Speed and CR7!</p>
           <div class="ambassador-video-wrapper">
             <iframe src="https://www.youtube.com/embed/Uv1PyE8J38w" frameborder="0" allowfullscreen></iframe>
           </div>
@@ -351,21 +226,19 @@
             <a href="https://www.instagram.com/ishowspeed/" target="_blank" class="ambassador-link">📸 Instagram</a>
           </div>
         </div>
-
         <div class="duo-card">
           <div class="ambassador-img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Georgina_Rodr%C3%ADguez_2023.jpg/800px-Georgina_Rodr%C3%ADguez_2023.jpg" alt="Georgina Rodriguez" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Georgina_Rodr%C3%ADguez_2023.jpg/800px-Georgina_Rodr%C3%ADguez_2023.jpg" alt="Georgina" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;" />
             <h3 style="margin:0; color:#f5c518;">Georgina Rodriguez</h3>
           </div>
-          <p style="color:#aaa; margin-top: 10px;">Ronaldo's better half and fashion icon. Her style evolution, family moments.</p>
+          <p style="color:#aaa; margin-top: 10px;">Ronaldo's better half and fashion icon.</p>
           <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#GioStyle</span>
           <div style="margin-top: 12px;">
-            <a href="https://www.instagram.com/georginagio/" target="_blank" class="ambassador-link">📸 Follow on Instagram</a>
+            <a href="https://www.instagram.com/georginagio/" target="_blank" class="ambassador-link">📸 Follow</a>
           </div>
         </div>
       </div>
 
-      <!-- ===== SHOUTBOX ===== -->
       <h2 class="section-title">💬 CR7 Fan Shoutbox</h2>
       <div class="shoutbox-container">
         <div class="shoutbox-form">
@@ -375,14 +248,11 @@
         </div>
         <div id="shoutboxMessages" class="shoutbox-messages"></div>
       </div>
-
     </div>
   </div>
 
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
-
   <script src="script.js"></script>
-  <!-- Toggle Info script is already in script.js -->
 </body>
 </html>
