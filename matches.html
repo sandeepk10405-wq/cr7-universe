@@ -6,7 +6,6 @@
   <title>Matches - CR7 Universe</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ---------- MATCH CARDS (NEW FEATURE) ---------- */
     .match-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -23,71 +22,18 @@
       position: relative;
       overflow: hidden;
     }
-    .match-card:hover {
-      border-color: #f5c518;
-      transform: translateY(-8px);
-      box-shadow: 0 10px 30px rgba(245, 197, 24, 0.15);
-    }
-    .match-card .match-teams {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 10px;
-    }
-    .match-card .match-teams img {
-      width: 45px;
-      height: 45px;
-      object-fit: contain;
-      background: #fff;
-      border-radius: 50%;
-      padding: 5px;
-    }
-    .match-card .match-teams .team-name {
-      font-weight: bold;
-      font-size: 14px;
-      color: #ddd;
-    }
-    .match-card .match-score {
-      font-size: 28px;
-      font-weight: 900;
-      color: #f5c518;
-      margin: 10px 0;
-    }
-    .match-card .match-score .vs {
-      color: #555;
-      font-size: 18px;
-      margin: 0 5px;
-    }
-    .match-card .match-info {
-      color: #888;
-      font-size: 13px;
-    }
-    .match-card .match-info span {
-      color: #f5c518;
-      font-weight: bold;
-    }
-    .match-status {
-      display: inline-block;
-      background: #f5c518;
-      color: #121212;
-      padding: 4px 16px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-top: 8px;
-    }
-    .match-status.live {
-      background: #ff0000;
-      color: #fff;
-      animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-    }
-    /* --- Countdown & Modal (Already there) --- */
+    .match-card:hover { border-color: #f5c518; transform: translateY(-8px); box-shadow: 0 10px 30px rgba(245, 197, 24, 0.15); }
+    .match-card .match-teams { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 10px; }
+    .match-card .match-teams img { width: 45px; height: 45px; object-fit: contain; background: #fff; border-radius: 50%; padding: 5px; }
+    .match-card .match-teams .team-name { font-weight: bold; font-size: 14px; color: #ddd; }
+    .match-card .match-score { font-size: 28px; font-weight: 900; color: #f5c518; margin: 10px 0; }
+    .match-card .match-score .vs { color: #555; font-size: 18px; margin: 0 5px; }
+    .match-card .match-info { color: #888; font-size: 13px; }
+    .match-card .match-info span { color: #f5c518; font-weight: bold; }
+    .match-status { display: inline-block; background: #f5c518; color: #121212; padding: 4px 16px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-top: 8px; }
+    .match-status.live { background: #ff0000; color: #fff; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
     .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: none; justify-content: center; align-items: center; z-index: 10000; padding: 20px; }
     .modal-box { background: #1e1e1e; padding: 20px; border-radius: 15px; max-width: 700px; width: 100%; border: 1px solid #f5c518; position: relative; }
     .close-modal { position: absolute; top: 10px; right: 15px; color: #f5c518; font-size: 24px; cursor: pointer; font-weight: bold; }
@@ -112,7 +58,6 @@
   </nav>
 
   <div class="container">
-
     <!-- Countdown -->
     <div class="countdown-container">
       <div class="countdown-box"><span class="countdown-number" id="days">00</span><span class="countdown-label">Days</span></div>
@@ -121,7 +66,7 @@
       <div class="countdown-box"><span class="countdown-number" id="seconds">00</span><span class="countdown-label">Secs</span></div>
     </div>
 
-    <!-- Upcoming Match -->
+    <!-- Upcoming Match (✅ FIX: AI -> Al) -->
     <h2 class="section-title">🔥 Upcoming Match</h2>
     <div class="duo-card" style="margin-bottom: 20px;">
       <div class="team-logos">
@@ -137,11 +82,11 @@
       <button id="openStreamBtn" class="watch-btn" onclick="openModal()">🔴 Watch from Home</button>
     </div>
 
-    <!-- ========== NEW: MATCH SCORE CARDS ========== -->
+    <!-- ========== LIVE SCORES & UPCOMING (NEW CARDS - SPELLINGS FIXED) ========== -->
     <h2 class="section-title">⚽ Live Scores & Upcoming</h2>
     <div class="match-grid">
 
-      <!-- Card 1: Al Nassr vs Al Ittihad -->
+      <!-- Card 1: Al Nassr vs Al Ittihad (Live) -->
       <div class="match-card">
         <div class="match-teams">
           <div><img src="https://upload.wikimedia.org/wikipedia/en/1/15/Al_Nassr_FC_logo.svg.png" alt="Al Nassr"><div class="team-name">Al Nassr</div></div>
@@ -152,7 +97,7 @@
         <span class="match-status live">● LIVE</span>
       </div>
 
-      <!-- Card 2: Real Madrid vs Barcelona -->
+      <!-- Card 2: Real Madrid vs Barcelona (Live) -->
       <div class="match-card">
         <div class="match-teams">
           <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" alt="Real Madrid"><div class="team-name">Real Madrid</div></div>
@@ -193,7 +138,7 @@
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
 
-  <!-- Stream Modal -->
+  <!-- Modal -->
   <div id="streamModal" class="modal-overlay">
     <div class="modal-box">
       <span class="close-modal" onclick="closeModal()">×</span>
@@ -210,7 +155,6 @@
   </div>
 
   <script>
-    // Modal Functions
     function openModal() { document.getElementById('streamModal').style.display = 'flex'; }
     function closeModal() { document.getElementById('streamModal').style.display = 'none'; }
     function changeVideo(id) { document.getElementById('streamVideo').src = "https://www.youtube.com/embed/" + id; }
