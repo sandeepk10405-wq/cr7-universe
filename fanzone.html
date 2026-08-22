@@ -194,7 +194,7 @@
     .wallpaper-card img {
       width: 100%;
       height: auto;
-      aspect-ratio: 9/16; /* Phone wallpaper ratio */
+      aspect-ratio: 9/16;
       object-fit: cover;
       display: block;
       background: #111;
@@ -286,8 +286,9 @@
 
   <div class="container">
 
-    <!-- === TOP BANNER IMAGE (NO CROP - FULL WIDTH) === -->
-    <img class="fan-hero-img" src="images/Ronaldo-hero2.jpg" alt="CR7 Universe Fan Zone" />
+    <!-- ===== ✅ TOP BANNER: PORTUGAL WORLD CHAMPIONS 2026 ===== -->
+    <!-- ✅ FIX: Aapki nayi image (images.jpeg) yahan lag gayi -->
+    <img class="fan-hero-img" src="images/images.jpeg" alt="Portugal World Champions 2026 - CR7" />
 
     <!-- ============================================================ -->
     <!-- 1. 🎯 CR7 GOAT QUIZ -->
@@ -373,7 +374,7 @@
       <div class="army-buttons">
         <a href="https://www.instagram.com/cristiano/" target="_blank" class="army-btn ig">📸 Follow on Instagram</a>
         <a href="https://www.youtube.com/@cristiano" target="_blank" class="army-btn yt">▶ Subscribe on YouTube</a>
-        <!-- WhatsApp Link - Yahan apna group link daalo, placeholder hai -->
+        <!-- 🔥 WhatsApp Link - Yahan apna group link daalo -->
         <a href="https://chat.whatsapp.com/YourGroupLinkHere" target="_blank" class="army-btn wa">💬 Join WhatsApp Group</a>
       </div>
     </div>
@@ -393,27 +394,27 @@
       {
         question: "CR7 ने अपना पहला Ballon d'Or किस साल जीता था?",
         options: ["2006", "2008", "2010", "2012"],
-        correct: 1 // index 1 = 2008
+        correct: 1
       },
       {
         question: "CR7 ने कुल कितने UEFA Champions League (UCL) टाइटल जीते हैं?",
         options: ["3", "4", "5", "6"],
-        correct: 2 // index 2 = 5
+        correct: 2
       },
       {
         question: "CR7 ने किस क्लब के लिए सबसे ज्यादा गोल किए हैं?",
         options: ["Sporting CP", "Manchester United", "Real Madrid", "Al-Nassr"],
-        correct: 2 // Real Madrid
+        correct: 2
       },
       {
         question: "CR7 का सिग्नेचर सेलिब्रेशन क्या कहलाता है?",
         options: ["Dab", "Siuuu", "Floss", "Moonwalk"],
-        correct: 1 // Siuuu
+        correct: 1
       },
       {
         question: "CR7 ने Portugal के लिए UEFA Euro कब जीता था?",
         options: ["2012", "2014", "2016", "2018"],
-        correct: 2 // 2016
+        correct: 2
       }
     ];
 
@@ -482,7 +483,6 @@
       document.getElementById('pollMessi').textContent = getPercent(pollData.messi) + '%';
       document.getElementById('pollBoth').textContent = getPercent(pollData.both) + '%';
 
-      // Save to localStorage
       localStorage.setItem('cr7GoatPoll', JSON.stringify(pollData));
     }
 
@@ -492,7 +492,6 @@
         if (pollData[vote] !== undefined) {
           pollData[vote]++;
           updatePollUI();
-          // Disable buttons after voting to prevent spam
           document.querySelectorAll('.poll-btn').forEach(b => b.disabled = true);
           this.style.borderColor = '#f5c518';
           this.style.background = '#2a2a2a';
@@ -554,9 +553,6 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // ================================================================
-    // 🚀 FALLBACK: Ensure script doesn't break if elements missing
-    // ================================================================
     console.log('✅ CR7 Fan Zone - All Features Loaded Successfully!');
   </script>
 </body>
