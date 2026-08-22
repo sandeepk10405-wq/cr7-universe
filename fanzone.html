@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fan Zone - CR7 Universe</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .fan-hero-img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 2px solid #f5c518;
+      margin-bottom: 25px;
+      box-shadow: 0 0 30px rgba(245, 197, 24, 0.2);
+    }
+    .back-home-btn {
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">⚽ CR7</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="lifestyle.html">Lifestyle</a>
+      <a href="matches.html">Matches</a>
+      <a href="stats.html">Stats</a>
+      <a href="fanzone.html" style="color:#f5c518;">Fan Zone</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- ===== TOP PAR CR7 KI IMAGE (DOOSRI WALI) ===== -->
+    <img class="fan-hero-img" src="images/Ronaldo-hero2.jpg" alt="CR7 - Fan Zone" />
+
+    <h2 class="section-title">💛 CR7 Fan Zone</h2>
+    
+    <!-- Welcome Card -->
+    <div class="duo-card">
+      <h3>Welcome to the Global CR7 Army</h3>
+      <p style="color:#aaa;">Connect with fans worldwide. Share your love for the GOAT!</p>
+      <div style="margin-top: 15px;">
+        <a href="https://www.instagram.com/cristiano/" target="_blank" class="ambassador-link">📸 CR7 Instagram</a>
+        <a href="https://www.youtube.com/@cristiano" target="_blank" class="ambassador-link">▶ CR7 YouTube</a>
+      </div>
+    </div>
+
+    <!-- ===== FAN AMBASSADORS ===== -->
+    <h2 class="section-title">🌟 Fan Ambassadors</h2>
+    <div class="fixtures-grid">
+      
+      <!-- iShowSpeed -->
+      <div class="duo-card">
+        <div class="ambassador-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IShowSpeed_at_ESPN_2024.jpg/800px-IShowSpeed_at_ESPN_2024.jpg" alt="iShowSpeed" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;" />
+          <h3 style="margin:0; color:#f5c518;">iShowSpeed</h3>
+        </div>
+        <p style="color:#aaa; margin-top: 10px;">Watch the iconic first meeting of Speed and CR7 right here!</p>
+        <div style="margin: 15px 0; border-radius: 10px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0;">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Uv1PyE8J38w" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#SpeedXCR7</span>
+        <div style="margin-top: 12px;">
+          <a href="https://www.youtube.com/@IShowSpeed" target="_blank" class="ambassador-link">▶ YouTube</a>
+          <a href="https://www.instagram.com/ishowspeed/" target="_blank" class="ambassador-link">📸 Instagram</a>
+        </div>
+      </div>
+
+      <!-- Georgina -->
+      <div class="duo-card">
+        <div class="ambassador-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Georgina_Rodr%C3%ADguez_2023.jpg/800px-Georgina_Rodr%C3%ADguez_2023.jpg" alt="Georgina Rodriguez" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;" />
+          <h3 style="margin:0; color:#f5c518;">Georgina Rodriguez</h3>
+        </div>
+        <p style="color:#aaa; margin-top: 10px;">Ronaldo's better half and fashion icon. Her style evolution, family moments.</p>
+        <span class="status-tag" style="background: #2a2a2a; color: #f5c518;">#GioStyle</span>
+        <div style="margin-top: 12px;">
+          <a href="https://www.instagram.com/georginagio/" target="_blank" class="ambassador-link">📸 Follow on Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FAN SHOUTBOX (Added here too) ===== -->
+    <h2 class="section-title">💬 CR7 Fan Shoutbox</h2>
+    <div class="shoutbox-container">
+      <div class="shoutbox-form">
+        <input type="text" id="shoutName" placeholder="Your name (e.g., CR7 Fan)" />
+        <input type="text" id="shoutMsg" placeholder="Write your message for CR7..." />
+        <button id="shoutBtn" class="attend-btn">Send 💬</button>
+      </div>
+      <div id="shoutboxMessages" class="shoutbox-messages"></div>
+    </div>
+
+    <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
+  </div>
+
+  <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
+  <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
