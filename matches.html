@@ -19,8 +19,6 @@
       padding: 20px;
       text-align: center;
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
     }
     .match-card:hover { border-color: #f5c518; transform: translateY(-8px); box-shadow: 0 10px 30px rgba(245, 197, 24, 0.15); }
     .match-card .match-teams { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 10px; }
@@ -58,7 +56,6 @@
   </nav>
 
   <div class="container">
-    <!-- Countdown -->
     <div class="countdown-container">
       <div class="countdown-box"><span class="countdown-number" id="days">00</span><span class="countdown-label">Days</span></div>
       <div class="countdown-box"><span class="countdown-number" id="hours">00</span><span class="countdown-label">Hours</span></div>
@@ -66,7 +63,6 @@
       <div class="countdown-box"><span class="countdown-number" id="seconds">00</span><span class="countdown-label">Secs</span></div>
     </div>
 
-    <!-- Upcoming Match (✅ FIX: AI -> Al) -->
     <h2 class="section-title">🔥 Upcoming Match</h2>
     <div class="duo-card" style="margin-bottom: 20px;">
       <div class="team-logos">
@@ -82,11 +78,8 @@
       <button id="openStreamBtn" class="watch-btn" onclick="openModal()">🔴 Watch from Home</button>
     </div>
 
-    <!-- ========== LIVE SCORES & UPCOMING (NEW CARDS - SPELLINGS FIXED) ========== -->
     <h2 class="section-title">⚽ Live Scores & Upcoming</h2>
     <div class="match-grid">
-
-      <!-- Card 1: Al Nassr vs Al Ittihad (Live) -->
       <div class="match-card">
         <div class="match-teams">
           <div><img src="https://upload.wikimedia.org/wikipedia/en/1/15/Al_Nassr_FC_logo.svg.png" alt="Al Nassr"><div class="team-name">Al Nassr</div></div>
@@ -97,7 +90,6 @@
         <span class="match-status live">● LIVE</span>
       </div>
 
-      <!-- Card 2: Real Madrid vs Barcelona (Live) -->
       <div class="match-card">
         <div class="match-teams">
           <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" alt="Real Madrid"><div class="team-name">Real Madrid</div></div>
@@ -108,7 +100,6 @@
         <span class="match-status live">● LIVE</span>
       </div>
 
-      <!-- Card 3: Al Nassr vs Al Shabab (Upcoming) -->
       <div class="match-card">
         <div class="match-teams">
           <div><img src="https://upload.wikimedia.org/wikipedia/en/1/15/Al_Nassr_FC_logo.svg.png" alt="Al Nassr"><div class="team-name">Al Nassr</div></div>
@@ -119,7 +110,6 @@
         <span class="match-status">Upcoming</span>
       </div>
 
-      <!-- Card 4: Portugal vs Spain (Upcoming) -->
       <div class="match-card">
         <div class="match-teams">
           <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Portugal_national_football_team_logo.png/150px-Portugal_national_football_team_logo.png" alt="Portugal"><div class="team-name">Portugal</div></div>
@@ -129,7 +119,6 @@
         <div class="match-info">📅 29 Aug 2026 | 12:30 AM IST</div>
         <span class="match-status">Upcoming</span>
       </div>
-
     </div>
 
     <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
@@ -138,7 +127,6 @@
   <div class="footer">Made with ❤️ for the CR7 Army | 2026</div>
   <button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()">⬆ Top</button>
 
-  <!-- Modal -->
   <div id="streamModal" class="modal-overlay">
     <div class="modal-box">
       <span class="close-modal" onclick="closeModal()">×</span>
