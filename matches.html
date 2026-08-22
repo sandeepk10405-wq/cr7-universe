@@ -6,6 +6,88 @@
   <title>Matches - CR7 Universe</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    /* ---------- MATCH CARDS (NEW FEATURE) ---------- */
+    .match-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .match-card {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .match-card:hover {
+      border-color: #f5c518;
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(245, 197, 24, 0.15);
+    }
+    .match-card .match-teams {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+    .match-card .match-teams img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 50%;
+      padding: 5px;
+    }
+    .match-card .match-teams .team-name {
+      font-weight: bold;
+      font-size: 14px;
+      color: #ddd;
+    }
+    .match-card .match-score {
+      font-size: 28px;
+      font-weight: 900;
+      color: #f5c518;
+      margin: 10px 0;
+    }
+    .match-card .match-score .vs {
+      color: #555;
+      font-size: 18px;
+      margin: 0 5px;
+    }
+    .match-card .match-info {
+      color: #888;
+      font-size: 13px;
+    }
+    .match-card .match-info span {
+      color: #f5c518;
+      font-weight: bold;
+    }
+    .match-status {
+      display: inline-block;
+      background: #f5c518;
+      color: #121212;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+    .match-status.live {
+      background: #ff0000;
+      color: #fff;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    /* --- Countdown & Modal (Already there) --- */
     .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: none; justify-content: center; align-items: center; z-index: 10000; padding: 20px; }
     .modal-box { background: #1e1e1e; padding: 20px; border-radius: 15px; max-width: 700px; width: 100%; border: 1px solid #f5c518; position: relative; }
     .close-modal { position: absolute; top: 10px; right: 15px; color: #f5c518; font-size: 24px; cursor: pointer; font-weight: bold; }
@@ -30,6 +112,8 @@
   </nav>
 
   <div class="container">
+
+    <!-- Countdown -->
     <div class="countdown-container">
       <div class="countdown-box"><span class="countdown-number" id="days">00</span><span class="countdown-label">Days</span></div>
       <div class="countdown-box"><span class="countdown-number" id="hours">00</span><span class="countdown-label">Hours</span></div>
@@ -37,6 +121,7 @@
       <div class="countdown-box"><span class="countdown-number" id="seconds">00</span><span class="countdown-label">Secs</span></div>
     </div>
 
+    <!-- Upcoming Match -->
     <h2 class="section-title">🔥 Upcoming Match</h2>
     <div class="duo-card" style="margin-bottom: 20px;">
       <div class="team-logos">
@@ -52,10 +137,54 @@
       <button id="openStreamBtn" class="watch-btn" onclick="openModal()">🔴 Watch from Home</button>
     </div>
 
-    <h2 class="section-title">🔥 Upcoming Fixtures</h2>
-    <div class="fixtures-grid">
-      <div class="duo-card"><h3>Al-Nassr vs Al-Ittihad</h3><p style="color: #aaa; font-size: 14px;">📅 22 August 2026 | 🕗 9:00 PM IST</p><p style="font-size: 13px;">🏟️ King Abdullah Sports City, Jeddah</p><span class="status-tag">Upcoming</span></div>
-      <div class="duo-card"><h3>Al-Nassr vs Al-Shabab</h3><p style="color: #aaa; font-size: 14px;">📅 29 August 2026 | 🕗 8:00 PM IST</p><p style="font-size: 13px;">🏟️ Mrsool Park, Riyadh</p><span class="status-tag">Upcoming</span></div>
+    <!-- ========== NEW: MATCH SCORE CARDS ========== -->
+    <h2 class="section-title">⚽ Live Scores & Upcoming</h2>
+    <div class="match-grid">
+
+      <!-- Card 1: Al Nassr vs Al Ittihad -->
+      <div class="match-card">
+        <div class="match-teams">
+          <div><img src="https://upload.wikimedia.org/wikipedia/en/1/15/Al_Nassr_FC_logo.svg.png" alt="Al Nassr"><div class="team-name">Al Nassr</div></div>
+          <div class="match-score">3 <span class="vs">vs</span> 1</div>
+          <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/Al-Ittihad_Jeddah_Logo.svg/1200px-Al-Ittihad_Jeddah_Logo.svg.png" alt="Al Ittihad" style="background:transparent;"><div class="team-name">Al Ittihad</div></div>
+        </div>
+        <div class="match-info">🏆 Saudi League | <span>FT</span></div>
+        <span class="match-status live">● LIVE</span>
+      </div>
+
+      <!-- Card 2: Real Madrid vs Barcelona -->
+      <div class="match-card">
+        <div class="match-teams">
+          <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" alt="Real Madrid"><div class="team-name">Real Madrid</div></div>
+          <div class="match-score">2 <span class="vs">vs</span> 2</div>
+          <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/1200px-FC_Barcelona_%28crest%29.svg.png" alt="Barcelona"><div class="team-name">Barcelona</div></div>
+        </div>
+        <div class="match-info">🏆 UCL Group | <span>HT</span></div>
+        <span class="match-status live">● LIVE</span>
+      </div>
+
+      <!-- Card 3: Al Nassr vs Al Shabab (Upcoming) -->
+      <div class="match-card">
+        <div class="match-teams">
+          <div><img src="https://upload.wikimedia.org/wikipedia/en/1/15/Al_Nassr_FC_logo.svg.png" alt="Al Nassr"><div class="team-name">Al Nassr</div></div>
+          <div class="match-score">- <span class="vs">vs</span> -</div>
+          <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/Al_Shabab_FC_%28Riyadh%29_logo.svg/1200px-Al_Shabab_FC_%28Riyadh%29_logo.svg.png" alt="Al Shabab"><div class="team-name">Al Shabab</div></div>
+        </div>
+        <div class="match-info">📅 22 Aug 2026 | 9:00 PM IST</div>
+        <span class="match-status">Upcoming</span>
+      </div>
+
+      <!-- Card 4: Portugal vs Spain (Upcoming) -->
+      <div class="match-card">
+        <div class="match-teams">
+          <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Portugal_national_football_team_logo.png/150px-Portugal_national_football_team_logo.png" alt="Portugal"><div class="team-name">Portugal</div></div>
+          <div class="match-score">- <span class="vs">vs</span> -</div>
+          <div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Spain_national_football_team_logo.png/150px-Spain_national_football_team_logo.png" alt="Spain"><div class="team-name">Spain</div></div>
+        </div>
+        <div class="match-info">📅 29 Aug 2026 | 12:30 AM IST</div>
+        <span class="match-status">Upcoming</span>
+      </div>
+
     </div>
 
     <a href="index.html" class="back-home-btn attend-btn">⬅ Back to Home</a>
@@ -81,6 +210,7 @@
   </div>
 
   <script>
+    // Modal Functions
     function openModal() { document.getElementById('streamModal').style.display = 'flex'; }
     function closeModal() { document.getElementById('streamModal').style.display = 'none'; }
     function changeVideo(id) { document.getElementById('streamVideo').src = "https://www.youtube.com/embed/" + id; }
