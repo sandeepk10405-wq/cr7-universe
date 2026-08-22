@@ -6,14 +6,16 @@
   <title>Fan Zone - CR7 Universe</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* ✅ FIXED: Ab image crop nahi hogi, full width mein proportionate scale hogi */
     .fan-hero-img {
       width: 100%;
-      max-height: 350px;
-      object-fit: cover;
+      height: auto;              /* Height automatic adjust hogi */
       border-radius: 16px;
       border: 2px solid #f5c518;
       margin-bottom: 25px;
       box-shadow: 0 0 30px rgba(245, 197, 24, 0.2);
+      display: block;            /* Extra spacing hatane ke liye */
+      background: #111;          /* Load hone tak background */
     }
     .back-home-btn {
       text-decoration: none;
@@ -37,7 +39,7 @@
 
   <div class="container">
 
-    <!-- ===== TOP PAR CR7 KI IMAGE (DOOSRI WALI) ===== -->
+    <!-- ===== TOP PAR CR7 KI IMAGE (AB CROP NAHI HOGI) ===== -->
     <img class="fan-hero-img" src="images/Ronaldo-hero2.jpg" alt="CR7 - Fan Zone" />
 
     <h2 class="section-title">💛 CR7 Fan Zone</h2>
@@ -56,7 +58,7 @@
     <h2 class="section-title">🌟 Fan Ambassadors</h2>
     <div class="fixtures-grid">
       
-      <!-- iShowSpeed -->
+      <!-- iShowSpeed (Spelling sahi ki gayi) -->
       <div class="duo-card">
         <div class="ambassador-img">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IShowSpeed_at_ESPN_2024.jpg/800px-IShowSpeed_at_ESPN_2024.jpg" alt="iShowSpeed" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;" />
@@ -73,7 +75,7 @@
         </div>
       </div>
 
-      <!-- Georgina -->
+      <!-- Georgina (Spelling sahi ki gayi) -->
       <div class="duo-card">
         <div class="ambassador-img">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Georgina_Rodr%C3%ADguez_2023.jpg/800px-Georgina_Rodr%C3%ADguez_2023.jpg" alt="Georgina Rodriguez" style="width:50px; height:50px; border-radius:50%; object-fit:cover; margin-bottom:10px;" />
@@ -87,7 +89,7 @@
       </div>
     </div>
 
-    <!-- ===== FAN SHOUTBOX (Added here too) ===== -->
+    <!-- ===== FAN SHOUTBOX ===== -->
     <h2 class="section-title">💬 CR7 Fan Shoutbox</h2>
     <div class="shoutbox-container">
       <div class="shoutbox-form">
